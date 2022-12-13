@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(plugin = { "pretty", "html:target/TS_001.html" }, // reporting purpose
 		monochrome = false, // console output
-		tags = "@TS_001", // tags from feature file
+		tags = "", // tags from feature file
 		features = { "src/test/resources/features" }, // location of feature files
 		glue = {"stepDefinition", "appHooks"}) // location of step definition files
 
