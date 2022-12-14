@@ -8,12 +8,12 @@ Feature: User launch dsalgo application and test Home page
   Scenario: User is on Home page and click access link without sign in
     Given The user is on Home page
     When The user clicks on "Get Started" link on homepage without login
-    Then The user get warning message " You are not logged in"
+    Then The user get warning message "You are not logged in"
   
   Scenario: User is on Home page and click on dropdown without sign in
     Given The user is on Home page
     When The user clicks on dropdown 
-    Then The user get warning message " You are not logged in"
+    Then The user get warning message "You are not logged in"
     
   Scenario: User is on Home page and click on sign in
     Given The user is on Home page
