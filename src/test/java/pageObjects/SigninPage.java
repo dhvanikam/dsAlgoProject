@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,20 +41,22 @@ public class SigninPage {
 		pwd.sendKeys(password);
 	}
 
+	//invalid login inputs
+		public void login() {
+			login_button.click();
+			String msg= hidden.getAttribute("text");
+			Loggerload.warn(msg);
+		}
+		
+	//login for excel sheet data
 	public void click_login() {
 		
 		login_button.click();
 		String msg= alert.getText();
-		Loggerload.warn(msg);
+		Loggerload.info(msg);
 	}
 	
-	//invalid login inputs
-	public void login() throws InterruptedException {
-		login_button.click();
-		Thread.sleep(1000);
-		String msg= hidden.getText();
-		Loggerload.warn(msg);
-	}
+	
 
 
 	public void register_link() {

@@ -35,7 +35,7 @@ public class Signin_SD {
 		}
 		
 		@Then("click login button to verify")
-		public void click_login_button_to_verify() throws InterruptedException {
+		public void click_login_button_to_verify()  {
 
 			Loggerload.info("Userclicks on login button");
 			sign.login();
