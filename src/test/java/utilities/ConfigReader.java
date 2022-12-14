@@ -39,11 +39,17 @@ public class ConfigReader {
 
 	public static String getApplicationUrl() {
 		String url = properties.getProperty("url");
-		Loggerload.info("Get property URL");
 		if (url != null)
 			return url;
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+	public static String getHomePage() {
+		String homeurl = properties.getProperty("homepage");
+		if (homeurl != null)
+			return homeurl;
+		else
+			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
 	}
 
 }
