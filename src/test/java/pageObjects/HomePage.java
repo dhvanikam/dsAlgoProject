@@ -26,7 +26,8 @@ public class HomePage {
 	@FindBy (xpath="//div[@class='dropdown-menu show']")WebElement dropdown_list;
 	
 	//sigin
-	@FindBy (xpath="//a[@href='/login']")WebElement signin;
+	@FindBy (xpath="//a[@href='/login']")
+	static WebElement signin;
 	//register
 	@FindBy (xpath="//a[@href='/register']")WebElement register;
 	
@@ -83,7 +84,7 @@ public class HomePage {
 	}
 
 	//Signin 
-	public void signin_link() {
+	public static void signin_link() {
 		signin.click();
 	}
 
