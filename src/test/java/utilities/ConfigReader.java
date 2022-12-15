@@ -44,10 +44,19 @@ public class ConfigReader {
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
+	
 	public static String getHomePage() {
 		String homeurl = properties.getProperty("homepage");
 		if (homeurl != null)
 			return homeurl;
+		else
+			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
+	}
+	
+	public static String getLoginPage() {
+		String loginurl = properties.getProperty("loginpage");
+		if (loginurl != null)
+			return loginurl;
 		else
 			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
 	}
