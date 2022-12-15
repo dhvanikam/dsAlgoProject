@@ -30,39 +30,42 @@ public class Home_SD {
 	public void the_user_should_be_redirected_to_homepage() {
 		
 	     String Title=home.getPageTitle();
-	     Loggerload.info("Verify Title of current page as ***** "+Title+" ****");
-	     assertEquals(Title, "NumpyNinja", "HomePage -verification");
+	     Loggerload.info("Title of current page is ***** "+Title+" ****");
+	     assertEquals(Title, "NumpyNinja", "pass");
 	     
 	}
 	
-	//The user tried to access link - click without login 
+	//The user tried to access link - click without login in home page
 	@Given("The user is on Home page")
 	public void the_user_is_on_home_page() {
 		Loggerload.info("User is on Home page");
 		home.homepage();
 	}
 	
-	
-	@When("The user clicks on {string} link on homepage without login")
-	public void the_user_clicks_on_link_on_homepage_without_login(String string) {
-		
-		Loggerload.info("User clicks on \"Getstarted link\" without login on Home page");
+	//user click Getstarted link on home page
+	@When("The user clicks on Get Started link on homepage {string} without login")
+	public void the_user_clicks_on_get_started_link_on_homepage_without_login(String string) {
+	   
 		home.getStarted_home(string);
 	}
-
-	
+		
 	@Then("The user get warning message {string}")
 	public void the_user_get_warning_message(String string) {
 		
-		String alert=home.alert_login();
-		assertEquals(alert,string,"alert -verification");
+		String alert=home.alert();
+		Loggerload.info("Actual Message : " + alert);
+		assertEquals(alert,string,"pass");
 	}
 	
 	//User clicks drop down
+	@When("The user clicks on dropdown {string}")
+	public void the_user_clicks_on_dropdown(String string) {
+		Loggerload.info("User clicks on dropdown without login");
+		home.dropdown(string);
+	}
 	@When("The user clicks on dropdown")
 	public void the_user_clicks_on_dropdown() {
-		Loggerload.info("User clicks on dropdown without login");
-		home.dropdown();
+		
 	}
 
 	//User click on sign in
@@ -77,7 +80,8 @@ public class Home_SD {
 		
 		Loggerload.info("User redirected to login page ");
 		String Title=home.login_page();
-		assertEquals(Title,"Login","Login page -verification");
+		Loggerload.info("Title of current page is : " +Title);
+		assertEquals(Title,"Login","pass");
 	}
 
 	
@@ -92,7 +96,8 @@ public class Home_SD {
 	public void the_user_redirected_to_registration_page() {
 		Loggerload.info("User redirected to Registraion page ");
 		String Title=home.register_page();
-		assertEquals(Title, "Registration", "Registration page -verification");
+		Loggerload.info("Title of current page is : " +Title);
+		assertEquals(Title, "Registration", "pass");
 	}
 
 
