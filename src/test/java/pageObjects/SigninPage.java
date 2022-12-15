@@ -1,5 +1,7 @@
 package pageObjects;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,7 +42,9 @@ public class SigninPage {
 	boolean isRequired = (Boolean) js_user.executeScript("return arguments[0].required;",user);
 	if(isRequired ) //if required is true for username
 	{
-	   Loggerload.info("Username is Required - Field is empty");
+	   assertEquals(isRequired, true);
+	   Loggerload.info("Usernmae Field is Empty - required attribute is validated");
+	  
 	}
 	}
 	else if (password.isBlank()) {
@@ -48,7 +52,9 @@ public class SigninPage {
 	boolean isRequired = (Boolean) js_password.executeScript("return arguments[0].required;",pwd);
 	if(isRequired )//if required is  true for password
 	{
-	   Loggerload.info("Password is Required - Field is empty");
+		assertEquals(isRequired, true);
+		Loggerload.info("Password Field is Empty - required attribute is validated");
+		
 	}
 	}
 			
