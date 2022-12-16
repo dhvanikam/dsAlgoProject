@@ -1,12 +1,7 @@
 package pageObjects;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import driverFactory.DriverFactory;
@@ -44,8 +39,7 @@ public class HomePage {
 	@FindBy (xpath="//*[@id='navbarCollapse']//a[6]")WebElement dropdown_graph;
 	
 	//sigin
-	@FindBy (xpath="//a[@href='/login']")
-	static WebElement signin;
+	@FindBy (xpath="//a[@href='/login']") WebElement signin;
 	//register
 	@FindBy (xpath="//a[@href='/register']")WebElement register;
 	
@@ -156,7 +150,7 @@ public class HomePage {
 		
 
 	//Signin 
-	public static void signin_link() {
+	public  void signin_link() {
 		signin.click();
 	}
 

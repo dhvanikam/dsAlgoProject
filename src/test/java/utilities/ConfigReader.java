@@ -61,4 +61,12 @@ public class ConfigReader {
 			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
 	}
 
+	public static String getexcelfilepath() {
+		String excelfilelpath = properties.getProperty("excelfilepath");
+		if (excelfilelpath != null)
+			return excelfilelpath;
+		else
+			throw new RuntimeException("Excel file path not specified in the Configuration.properties file.");
+	}
+
 }
