@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
+import utilities.ConfigReader;
 import utilities.ExcelReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,7 +22,8 @@ public class Signin_SD {
 	static String username;
 	static String password;
 	static String message;
-	
+	String Excelpath=ConfigReader.getexcelfilepath();
+			
 	//User is on Sigin page
 	@Given("The user is on signin page")
 	public void the_user_is_on_signin_page() {
@@ -49,9 +51,9 @@ public class Signin_SD {
 	@When("The user enter sheet {string} and {int}")
 	public void the_user_enter_sheet_and(String sheetname, Integer rownumber) throws InvalidFormatException, IOException {
 	    ExcelReader reader=new ExcelReader();
+	   
 		List <Map<String,String>> testdata=
-				reader.getData("C:\\Users\\sathy\\work\\SathyaWorkspace\\dsAlgoProject\\src\\test\\resources\\Exceldata\\Login.xlsx",sheetname);
-		
+				reader.getData(Excelpath,sheetname);
 		username=testdata.get(rownumber).get("username");
 		password=testdata.get(rownumber).get("password");
 		message=testdata.get(rownumber).get("expectedmessage");

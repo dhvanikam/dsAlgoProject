@@ -42,7 +42,7 @@ public class SigninPage {
 	boolean isRequired = (Boolean) js_user.executeScript("return arguments[0].required;",user);
 	if(isRequired ) //if required is true for username
 	{
-	   assertEquals(isRequired, true);
+	  
 	   Loggerload.info("Usernmae Field is Empty - required attribute is validated");
 	  
 	}
@@ -52,7 +52,7 @@ public class SigninPage {
 	boolean isRequired = (Boolean) js_password.executeScript("return arguments[0].required;",pwd);
 	if(isRequired )//if required is  true for password
 	{
-		assertEquals(isRequired, true);
+		
 		Loggerload.info("Password Field is Empty - required attribute is validated");
 		
 	}
