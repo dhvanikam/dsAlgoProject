@@ -9,13 +9,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import utilities.ConfigReader;
 import utilities.Loggerload;
 
 public class DriverFactory {
 
 	public static WebDriver driver;
-	public static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
+	//public static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
 	public WebDriver initializeDrivers(String browser) {
 
@@ -23,25 +22,25 @@ public class DriverFactory {
 			Loggerload.info("Testing on firefox");
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			threadDriver.set(driver);
+			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			Loggerload.info("Testing on chrome");
 			WebDriverManager.chromedriver().browserVersion("108.0.0").setup();
 			driver = new ChromeDriver();
-			threadDriver.set(driver);
+			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("safari")) {
 			Loggerload.info("Testing on safari");
 			WebDriverManager.safaridriver().setup();
 			driver = new SafariDriver();
-			threadDriver.set(driver);
+			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("edge")) {
 			Loggerload.info("Testing on Edge");
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			threadDriver.set(driver);
+			//threadDriver.set(driver);
 		}
 		//Set Page load timeout
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
@@ -55,12 +54,13 @@ public class DriverFactory {
 	}
 
 	public static synchronized WebDriver getdriver() {
-		return threadDriver.get();
+		return driver;
+				//threadDriver.get();
 	}
 
 	public void closeallDriver() {
-
-		getdriver().close();
+		driver.close();
+		//getdriver().close();
 	}
 
 }
