@@ -1,21 +1,17 @@
 package pageObjects;
 
-import java.util.Iterator;
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import driverFactory.DriverFactory;
 import utilities.ConfigReader;
 import utilities.Loggerload;
 
 public class HomePage {
 	
-	public  static WebDriver driver;
+	public static WebDriver driver=DriverFactory.getdriver();
 	String URL=ConfigReader.getApplicationUrl();
 	String homeURL=ConfigReader.getHomePage();
 	
@@ -44,137 +40,136 @@ public class HomePage {
 	@FindBy (xpath="//*[@id='navbarCollapse']//a[6]")WebElement dropdown_graph;
 	
 	//sigin
-	@FindBy (xpath="//a[@href='/login']")
-	static WebElement signin;
+	@FindBy (xpath="//a[@href='/login']") WebElement signin;
 	//register
 	@FindBy (xpath="//a[@href='/register']")WebElement register;
 	
-	//Dsalgo page elements
-	public void dsalgopage() {
-		
-			driver=DriverFactory.getdriver();
-			driver.get(URL);
-			PageFactory.initElements(driver, this);
-					
-	}
+	// Page Elements
+	public HomePage() {
 
-	public void getStarted_link(String str) {
-		
-		getstart_link.click();
-		
-	}
-
-	public String getPageTitle() {
-		
-		String title=driver.getTitle();
-		return title;
-		
-	}
-	
-	public String alert() {
-				
-		String msg=alert_msg.getText();
-		return msg;
-		
-	}
-
-	//Home page Elements
-	public void homepage() {
-		
-		driver=DriverFactory.getdriver();
-		driver.get(homeURL);
 		PageFactory.initElements(driver, this);
 	}
 
+	public void dsalgopage() {
+
+		driver.get(URL);
+
+	}
+
+	public void getStarted_link(String str) {
+
+		getstart_link.click();
+
+	}
+
+	public String getPageTitle() {
+
+		String title = driver.getTitle();
+		return title;
+
+	}
+
+	public String alert() {
+
+		String msg = alert_msg.getText();
+		return msg;
+
+	}
+
+	// Home page Elements
+	public void homepage() {
+
+		driver.get(homeURL);
+
+	}
+
 	public void getStarted_home(String string) {
-		
+
 		switch (string) {
 		case "Datastructures":
-			Loggerload.info("click "+getstart_datastructures.getText()+"link on  DataStructures ");
+			Loggerload.info("click " + getstart_datastructures.getText() + "link on  DataStructures ");
 			getstart_datastructures.click();
 			break;
-	    case "Arrays":
-	    	Loggerload.info("click "+getstart_array.getText()+"link on Array ");
-	    	getstart_array.click();
-	    	break;
-	    case "Linkedlist":
-	    	Loggerload.info("click "+getstart_linkedlist.getText()+"link on LinkedList");
-	    	getstart_linkedlist.click();
-	    	break;
-	    case "Stack":
-	    	Loggerload.info("click "+getstart_stack.getText()+"link on stack");
-	    	getstart_stack.click();
-	    	break;
-	    case "Queue":
-	    	Loggerload.info("click "+getstart_queue.getText()+"link on queue ");
-	    	getstart_queue.click();
-	    	break;
-	    case "Tree":
-	    	Loggerload.info("click "+getstart_tree.getText()+"link on Tree ");
-	    	getstart_tree.click();
-	    	break;
-	    case "Graph":
-	    	Loggerload.info("click "+getstart_graph.getText()+"link on Graph ");
-	    	getstart_graph.click();
+		case "Arrays":
+			Loggerload.info("click " + getstart_array.getText() + "link on Array ");
+			getstart_array.click();
+			break;
+		case "Linkedlist":
+			Loggerload.info("click " + getstart_linkedlist.getText() + "link on LinkedList");
+			getstart_linkedlist.click();
+			break;
+		case "Stack":
+			Loggerload.info("click " + getstart_stack.getText() + "link on stack");
+			getstart_stack.click();
+			break;
+		case "Queue":
+			Loggerload.info("click " + getstart_queue.getText() + "link on queue ");
+			getstart_queue.click();
+			break;
+		case "Tree":
+			Loggerload.info("click " + getstart_tree.getText() + "link on Tree ");
+			getstart_tree.click();
+			break;
+		case "Graph":
+			Loggerload.info("click " + getstart_graph.getText() + "link on Graph ");
+			getstart_graph.click();
 			break;
 		}
 	}
 
-	//Dropdown
+	// Dropdown
 	public void dropdown(String string) {
-			
+
 		dropdown.click();
-		switch (string) { 
-	    case "Arrays":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_array.click();
-	    	break;
-	    case "Linkedlist":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_linkedlist.click();
-	    	break;
-	    case "Stack":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_stack.click();
-	    	break;
-	    case "Queue":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_queue.click();
-	    	break;
-	    case "Tree":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_tree.click();
-	    	break;
-	    case "Graph":
-	    	Loggerload.info("User click on " + string);
-	    	dropdown_graph.click();
+		switch (string) {
+		case "Arrays":
+			Loggerload.info("User click on " + string);
+			dropdown_array.click();
+			break;
+		case "Linkedlist":
+			Loggerload.info("User click on " + string);
+			dropdown_linkedlist.click();
+			break;
+		case "Stack":
+			Loggerload.info("User click on " + string);
+			dropdown_stack.click();
+			break;
+		case "Queue":
+			Loggerload.info("User click on " + string);
+			dropdown_queue.click();
+			break;
+		case "Tree":
+			Loggerload.info("User click on " + string);
+			dropdown_tree.click();
+			break;
+		case "Graph":
+			Loggerload.info("User click on " + string);
+			dropdown_graph.click();
 			break;
 		}
-		
-			
-	}
-		
 
-	//Signin 
-	public static void signin_link() {
+	}
+
+	// Signin
+	public void signin_link() {
 		signin.click();
 	}
 
 	public String login_page() {
-		String title=driver.getTitle();
+		String title = driver.getTitle();
 		return title;
 	}
 
-	//Register
+	// Register
 	public void register_link() {
-		
+
 		register.click();
-		
+
 	}
 
 	public String register_page() {
-		String title=driver.getTitle();
+		String title = driver.getTitle();
 		return title;
 	}
-	
+
 }
