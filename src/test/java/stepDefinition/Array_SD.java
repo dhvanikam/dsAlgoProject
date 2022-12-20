@@ -37,7 +37,7 @@ public class Array_SD {
 		Loggerload.info("User redirected to Array Data Structure Page ");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
-		assertEquals(Title, "Array", "Pass: Title matches");
+		assertEquals(Title, "Array", "Title do not match");
 	}
 
 	// Scenario#2
@@ -58,7 +58,7 @@ public class Array_SD {
 		Loggerload.info("User redirected to Array Data Structure Page ");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
-		assertEquals(Title, "Arrays in Python", "Pass: Title matches");
+		assertEquals(Title, "sArrays in Python", "Title do not match");
 	}
 
 	// Scenario#3
@@ -78,7 +78,7 @@ public class Array_SD {
 		Loggerload.info("User redirected to a page having an tryEditor with a Run button to test");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
-		assertEquals(Title, "Assessment", "Pass: Title matches");
+		assertEquals(Title, "Assessment", "Title do not match");
 	}
 
 	// Scenario#4
@@ -137,7 +137,7 @@ public class Array_SD {
 		Loggerload.info("User redirected to Arrays using List page");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
-		assertEquals(Title, "Arrays Using List", "Pass: Title matches");
+		assertEquals(Title, "Arrays Using List", "Title do not match");
 	}
 
 }
