@@ -3,9 +3,6 @@ package stepDefinition;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
-
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
 import io.cucumber.java.en.Given;
@@ -13,66 +10,57 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.ArrayPage;
 import utilities.ConfigReader;
-import utilities.ExcelReader;
 import utilities.Loggerload;
 
 public class Array_SD {
 	ArrayPage arrayPage = new ArrayPage();
 	String Excelpath = ConfigReader.getexcelfilepath();
-	String expectedMsg;
+	static String expectedMsg;
+	static String code;
+	
 
-	String code;
+	// @TS_array_02
+	@Given("The user is on the {string} after logged in")
+	public void the_user_is_on_the_after_logged_in(String pagename) {
+		String page_name = pagename.replaceAll("\\s+", "");
+		arrayPage.navigateTo(page_name);
+		Loggerload.info("The user is on the" + pagename + "after logged in");
+	}
 
-	// Scenario#1
-	@When("The user clicks the {string} button in Array Panel or select Array item from the drop down menu")
-	public void the_user_clicks_the_button_in_array_panel_or_select_array_item_from_the_drop_down_menu(String string) {
+	@When("The user select Array item from the drop down menu")
+	public void the_user_select_array_item_from_the_drop_down_menu() {
 		Loggerload.info("User click on Data Structure dropdown ");
-		// arrayPage.Arraypage();
 		Loggerload.info("User select Array from Data Structure dropdown ");
 		arrayPage.dropdown_Array();
 	}
 
 	@Then("The user be directed to {string} Data Structure Page")
-	public void the_user_be_directed_to_data_structure_page(String string) {
+	public void the_user_be_directed_to_data_structure_page(String pagename) {
 		Loggerload.info("User redirected to Array Data Structure Page ");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
-		assertEquals(Title, "Array", "Title do not match");
+		assertEquals(Title, pagename, "Title do not match");
 	}
 
-	// Scenario#2
-	@Given("The user is in the Array page after logged in")
-	public void the_user_is_in_the_array_page_after_logged_in() {
-		arrayPage.navigateToArrayPage();
-		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
-	}
-
+	// @TS_array_03
 	@When("The user clicks Arrays in Python button")
 	public void the_user_clicks_arrays_in_python_button() {
 		arrayPage.clickOnarraysInPythonLink();
 	}
 
-	@Then("The user should be redirected to Arrays in Python page")
-	public void the_user_should_be_redirected_to_arrays_in_python_page() {
+	@Then("The user should be redirected to {string} page")
+	public void the_user_should_be_redirected_to_page(String pagename) {
 		Loggerload.info("User redirected to Array Data Structure Page ");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
-		assertEquals(Title, "sArrays in Python", "Title do not match");
+		assertEquals(Title, pagename, "Title do not match");
 	}
 
-	// Scenario#3
-	@Given("The user is in the Arrays in Python page after logged in")
-	public void the_user_is_in_the_arrays_in_python_page_after_logged_in() {
-		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
+	// @TS_array_04
+	@When("The user clicks {string} button on {string} page")
+	public void the_user_clicks_button_on_page(String btnname, String dstname) {
+		arrayPage.clickOnTryHereLink(btnname,dstname);
 	}
-
-	@When("The user clicks {string} button")
-	public void the_user_clicks_button(String string) {
-		arrayPage.clickOnTryHereLink();
-	}
-
 	@Then("The user should be redirected to a page having an tryEditor with a Run button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 		Loggerload.info("User redirected to a page having an tryEditor with a Run button to test");
@@ -81,37 +69,42 @@ public class Array_SD {
 		assertEquals(Title, "Assessment", "Title do not match");
 	}
 
-	// Scenario#4
+	// @TS_array_05
 	@Given("The user is in a page having an tryEditor with a Run button to test")
 	public void the_user_is_in_a_page_having_an_try_editor_with_a_run_button_to_test() {
+		arrayPage.navigateTotryEditor();
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
 	}
 
-	@When("The user clicks on Run button after Entering valid python code in tryEditor from sheet {string} and {int}")
-	public void the_user_clicks_on_run_button_after_entering_valid_python_code_in_try_editor_from_sheet_and(
-			String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
+	@When("The user enter valid python code in tryEditor from sheet {string} and {int}")
+	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and(String sheetName, Integer rowNum)
+			throws InvalidFormatException, IOException {
 		arrayPage.enterPythonCode(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
 		arrayPage.clickOnRunButton();
+	}
 
+	@When("The user clicks on run button")
+	public void the_user_clicks_on_run_button() {
+		arrayPage.clickOnRunButton();
 	}
 
 	@Then("The user should be presented with Run result")
-	public void the_user_should_be_presented_with_run_result() {
+	public void the_user_should_be_presented_with_run_result() throws InterruptedException {
 		Loggerload.info("Expected result - Excel Sheet :  " + expectedMsg);
+
 		String actualMsg = arrayPage.getActualResult();
 		Loggerload.info("Actual result  :" + actualMsg);
-		assertEquals(actualMsg, expectedMsg);
+		assertEquals(actualMsg, expectedMsg, "Result do not match");
 
 	}
 
-	// Scenario#5
-	@When("The user clicks on Run button after Entering python code with invalid syntax in tryEditor from sheet {string} and {int}")
-	public void the_user_clicks_on_run_button_after_entering_python_code_with_invalid_syntax_in_try_editor_from_sheet_and(
-			String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
+	// @TS_array_06
+	@When("The user enter python code with invalid syntax in tryEditor from sheet {string} and {int}")
+	public void the_user_enter_python_code_with_invalid_syntax_in_try_editor_from_sheet_and(String sheetName,
+			Integer rowNum) throws InvalidFormatException, IOException {
 		arrayPage.enterPythonCode(sheetName, rowNum);
-		arrayPage.clickOnRunButton();
 	}
 
 	@Then("The user should be presented with error message")
@@ -120,24 +113,122 @@ public class Array_SD {
 		Loggerload.info("Actual result  :" + actualMsg);
 	}
 
-	// Scenario#6
-	@Given("The user is in the Arrays using List page after logged in")
-	public void the_user_is_in_the_arrays_using_list_page_after_logged_in() {
-		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
-	}
-
-	@When("The user clicks Arrays using List button")
-	public void the_user_clicks_arrays_using_list_button() {
+	// @TS_array_07
+	// @TS_array_08
+	@When("The user clicks Arrays Using List link")
+	public void the_user_clicks_arrays_using_list_link() {
 		arrayPage.clickArraysUsingList();
 	}
 
-	@Then("The user should be redirected to Arrays using List page")
-	public void the_user_should_be_redirected_to_arrays_using_list_page() {
-		Loggerload.info("User redirected to Arrays using List page");
+	// @TS_array_09
+	// @TS_array_10
+
+	// @TS_array_11
+	@When("The user clicks Basic Operations in Lists link")
+	public void the_user_clicks_basic_operations_in_lists_link() {
+		arrayPage.clickBasicOpInLists();
+	}
+
+	// @TS_array_12
+	// @TS_array_13
+	// @TS_array_14
+	// @TS_array_15
+	@When("The user clicks Applications of Array link")
+	public void the_user_clicks_applications_of_array_link() {
+		arrayPage.clickAppOfArray();
+	}
+	// @TS_array_16
+	// @TS_array_17
+	// @TS_array_18
+
+	// Practice questions
+	// @TS_array_19
+	@When("The user clicks Practice Questions link")
+	public void the_user_clicks_practice_questions_link() {
+		arrayPage.clickPracticeQue();
+	}
+
+	@Then("The user should be redirected to Practice page")
+	public void the_user_should_be_redirected_to_practice_page() {
+		Loggerload.info("User redirected to Practice page");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
-		assertEquals(Title, "Arrays Using List", "Title do not match");
+		assertEquals(Title, "Practice Questions", "Title do not match");
 	}
+
+	// @TS_array_20
+	@When("The user clicks the Search the array link")
+	public void the_user_clicks_the_search_the_array_link() {
+		arrayPage.clickarrayLink();
+	}
+
+	@Then("The user should be redirected to question page contains an tryEditor with Run and Submit buttons")
+	public void the_user_should_be_redirected_to_question_page_contains_an_try_editor_with_run_and_submit_buttons() {
+		Loggerload
+				.info("User redirected to Question page contains a question,an tryEditor with Run and Submit buttons");
+		String Title = arrayPage.getArrayPageTitle();
+		Loggerload.info("Title of current page is : " + Title);
+		assertEquals(Title, "Assessment", "Title do not match");
+	}
+
+	// @TS_array_21
+	@Given("The user is on {string} page of {string} after logged in")
+	public void the_user_is_on_page_of_after_logged_in(String pname, String pname2) {
+		String page_name = pname + pname2.replaceAll("\\s+", "");
+		arrayPage.navigateTo(page_name);
+	}
+
+	@When("The user enter valid python code in tryEditor from sheet {string} and {int} for the question")
+	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and_for_the_question(String sheetName,
+			Integer rowNum) throws InvalidFormatException, IOException {
+		arrayPage.enterPythonCodePractice(sheetName, rowNum);
+		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
+	}
+
+	@When("The user clicks on Submit button")
+	public void the_user_clicks_on_submit_button() {
+		arrayPage.clickOnSubmitButton();
+	}
+
+	@Then("The user should be presented with successful submission message")
+	public void the_user_should_be_presented_with_successful_submission_message() throws InterruptedException {
+
+		Loggerload.info("Expected result - Excel Sheet :  " + expectedMsg);
+		String actualMsg = arrayPage.getActualResult();
+		Loggerload.info("Actual result  :" + actualMsg);
+		assertEquals(actualMsg, expectedMsg, "Result do not match");
+	}
+
+	// @TS_array_23
+	// @TS_array_24
+	
+	@When("The user clicks the Max Consecutive Ones link")
+	public void the_user_clicks_the_max_consecutive_ones_link() {
+		arrayPage.maxConsOnes();
+	}
+
+	// @TS_array_25
+	// @TS_array_26
+	// @TS_array_27
+	// @TS_array_28
+	
+	@When("The user clicks the Find Numbers with Even Number of Digits link")
+	public void the_user_clicks_the_find_numbers_with_even_number_of_digits_link() {
+		arrayPage.findNumbers();
+	}
+
+	// @TS_array_29
+	// @TS_array_30
+	// @TS_array_31
+	// @TS_array_32
+	
+	@When("The user clicks the Squares of a Sorted Array link")
+	public void the_user_clicks_the_squares_of_a_sorted_array_link() {
+		arrayPage.squaresSortedArray();
+	}
+	
+	// @TS_array_33
+	// @TS_array_34
+	// @TS_array_35
 
 }
