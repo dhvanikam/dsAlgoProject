@@ -16,7 +16,7 @@ Feature: User launch dsalgo application and test Array page
   @TS_array_03
   Scenario: The user is able to navigate to Arrays in Python page
     Given The user is on the "Array page" after logged in
-    When The user clicks Arrays in Python button
+    When The user clicks Arrays in Python link
     Then The user should be redirected to "Arrays in Python" page
 
   @TS_array_04

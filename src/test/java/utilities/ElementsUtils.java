@@ -33,11 +33,9 @@ public class ElementsUtils {
 	}
 
 	public void waitForElement(WebElement element) {
-		new WebDriverWait(driver, Duration.ofSeconds(10))
-				.until(ExpectedConditions.visibilityOf(element));
-		
-	}
+		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(element));
 
+	}
 
 	public String getCodefromExcel(String sheetname, int rownumber) throws InvalidFormatException, IOException {
 		ExcelReader reader = new ExcelReader();

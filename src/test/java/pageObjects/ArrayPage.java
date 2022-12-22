@@ -16,12 +16,6 @@ import utilities.Loggerload;
 public class ArrayPage {
 	public static WebDriver driver=DriverFactory.getdriver();
 	ElementsUtils eleUtil = new ElementsUtils();
-//	String arrayURL=ConfigReader.getArrayUrl();
-//	String arrayInPythonURL=ConfigReader.getArrayInPythonUrl();
-//	String arrayUsingListURL=ConfigReader.getArrayUsingListUrl();
-//	String basicOpInListsURL=ConfigReader.getbasicOpInListsUrl();
-//	String arrayPracticeQueURL=ConfigReader.getPracticeQueUrl();
-//	String appOfArrayURL=ConfigReader.getappOfArrayUrl();
 	String tryEditorURL=ConfigReader.tryEditorURL();
 	
 	
@@ -79,7 +73,7 @@ public class ArrayPage {
 	}
 
 	public void clickOnTryHereLink(String bname, String dsname) {
-		Loggerload.info("click on " + bname + " button on "+dsname);
+		Loggerload.info("click on " + bname + " button on " + dsname);
 		TryHereLink.click();
 
 	}
@@ -120,7 +114,6 @@ public class ArrayPage {
 
 	}
 
-
 	public void clickArraysUsingList() {
 		Loggerload.info("click " + arraysUsingListLink.getText() + " On array page");
 		arraysUsingListLink.click();
@@ -151,45 +144,19 @@ public class ArrayPage {
 
 	}
 
-//	public void navigateToArrayInPython() {
-//		Loggerload.info("Navigate to Array in Python page");
-//		driver.get(arrayInPythonURL);
-//
-//	}
-
 	public void clickOnSubmitButton() {
 		Loggerload.info("Click on Submit button");
 		submitButton.click();
 	}
-
-//	public void navigateToArrayPracticeQue() {
-//		driver.get(arrayPracticeQueURL);
-//
-//	}
 
 	public void navigateTotryEditor() {
 		driver.get(tryEditorURL);
 
 	}
 
-//	public void navigateToArrayUsingList() {
-//		driver.get(arrayUsingListURL);
-//
-//	}
-
-//	public void navigateToBasicOpInLists() {
-//		driver.get(basicOpInListsURL);
-//
-//	}
-
-//	public void navigateToAppOfArrayPage() {
-//		driver.get(appOfArrayURL);
-//
-//	}
-
 	public void navigateTo(String pagename) {
-		String URL = ConfigReader.tryURL(pagename);
-		driver.get(URL);
+		String urlName = ConfigReader.geturl(pagename);
+		driver.get(urlName);
 	}
 
 	public void maxConsOnes() {
@@ -204,7 +171,7 @@ public class ArrayPage {
 
 	public void squaresSortedArray() {
 		sqOfSortedArrayLink.click();
-
 	}
+	
 
 }

@@ -43,8 +43,8 @@ public class Array_SD {
 	}
 
 	// @TS_array_03
-	@When("The user clicks Arrays in Python button")
-	public void the_user_clicks_arrays_in_python_button() {
+	@When("The user clicks Arrays in Python link")
+	public void the_user_clicks_arrays_in_python_link() {
 		arrayPage.clickOnarraysInPythonLink();
 	}
 
