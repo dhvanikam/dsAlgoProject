@@ -12,7 +12,6 @@ import driverFactory.DriverFactory;
 import utilities.ConfigReader;
 import utilities.ElementsUtils;
 import utilities.Loggerload;
-import utilities.ConfigReader;
 
 public class QueuePage {
 
@@ -27,32 +26,21 @@ public class QueuePage {
 
 	// homepage
 
-	@FindBy(xpath = "//*//a[contains(text(), 'Data Structures')]")
-	WebElement dropdown;
-	@FindBy(xpath = "//a[normalize-space()='Queue']")
-	WebElement dropdown_queue;
+	@FindBy(xpath = "//*//a[contains(text(), 'Data Structures')]")WebElement dropdown;
+	@FindBy(xpath = "//a[normalize-space()='Queue']")WebElement dropdown_queue;
 
 	// queuepage
-	@FindBy(xpath = "//a[normalize-space()='Implementation of Queue in Python']")
-	WebElement ImplementationQueuePythonLink;
-	@FindBy(xpath = "//a[@class='btn btn-info']")
-	WebElement TryHereLink;
+	@FindBy(xpath = "//a[normalize-space()='Implementation of Queue in Python']")WebElement ImplementationQueuePythonLink;
+	@FindBy(xpath = "//a[@class='btn btn-info']")WebElement TryHereLink;
 
-	@FindBy(xpath = "//a[@href='implementation-collections']")
-	WebElement ImpCollectionsDequeLink;
-	@FindBy(xpath = "//a[@href='Implementation-array']")
-	WebElement ImpUsingArrayLink;
-	@FindBy(xpath = "//a[@href='QueueOp']")
-	WebElement QueueOperationsLink;
-	@FindBy(xpath = "//a[@class='list-group-item list-group-item-light text-info']")
-	WebElement PracticeQuestionsLink;
+	@FindBy(xpath = "//a[@href='implementation-collections']")WebElement ImpCollectionsDequeLink;
+	@FindBy(xpath = "//a[@href='Implementation-array']")WebElement ImpUsingArrayLink;
+	@FindBy(xpath = "//a[@href='QueueOp']")WebElement QueueOperationsLink;
+	@FindBy(xpath = "//a[@class='list-group-item list-group-item-light text-info']")WebElement PracticeQuestionsLink;
 
-	@FindBy(xpath = "//textarea[@tabindex='0']")
-	WebElement editorInput;
-	@FindBy(xpath = "//button[@type='button']")
-	WebElement runButton;
-	@FindBy(id = "output")
-	WebElement output;
+	@FindBy(xpath = "//textarea[@tabindex='0']")WebElement editorInput;
+	@FindBy(xpath = "//button[@type='button']")WebElement runButton;
+	@FindBy(id = "output")WebElement output;
 
 	public QueuePage() {
 
@@ -85,7 +73,6 @@ public class QueuePage {
 
 	public void navigateToQPracQuesPage() {
 		driver.get(qpracquesurl);
-		// Loggerload.info("User is in Queue Practice Questions Page ");
 	}
 
 	public void navigateToImpOfQPython() {
@@ -110,8 +97,6 @@ public class QueuePage {
 	}
 
 	public void clickOnTryHereLink() {
-		// Loggerload.info("click " + TryHereLink.getText() + "On implementation queue
-		// of python link page");
 		TryHereLink.click();
 		Loggerload.info("User clicked on Try here link");
 

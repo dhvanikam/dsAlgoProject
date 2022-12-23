@@ -28,7 +28,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_05
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -39,7 +39,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_06
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -62,7 +62,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_09
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -73,7 +73,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_10
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -96,7 +96,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_13
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -107,7 +107,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_14
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -130,7 +130,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_17
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -141,7 +141,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_18
   Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
