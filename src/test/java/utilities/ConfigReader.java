@@ -1,13 +1,10 @@
 package utilities;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.bouncycastle.crypto.RuntimeCryptoException;
 
 public class ConfigReader {
 	private static Properties properties;
@@ -74,14 +71,22 @@ public class ConfigReader {
 			throw new RuntimeException("Excel file path not specified in the Configuration.properties file.");
 	}
 
-	public static String getArrayUrl() {
-		String arrayurl = properties.getProperty("arrayurl");
-		if (arrayurl != null)
-			return arrayurl;
+	public static String tryEditorURL() {
+		String tryeditorurl = properties.getProperty("tryeditorurl");
+		if (tryeditorurl != null)
+			return tryeditorurl;
 		else
-			throw new RuntimeException("array url not specified in the Configuration.properties file.");
+			throw new RuntimeException("tryeditorurl not specified in the Configuration.properties file.");
 	}
 
+	public static String geturl(String pagename) {
+		String url = properties.getProperty(pagename);
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException(pagename+" url not specified in the Configuration.properties file.");
+	}
+	
 	public static String getStackUrl() {
 		String stackurl = properties.getProperty("stackurl");
 		if (stackurl != null)
@@ -96,22 +101,6 @@ public class ConfigReader {
 		return url;
 		else
 			throw new RuntimeException(pagename+"url not specified in the Configuration.properties file.");
-	}
-
-	public static String geturl(String pagename) {
-		String url = properties.getProperty(pagename);
-		if (url!= null)
-		return url;
-		else
-			throw new RuntimeException(pagename+"url not specified in the Configuration.properties file.");
-		}
-
-	public static String tryEditorURL() {
-		String tryeditorurl = properties.getProperty("tryeditorurl");
-		if (tryeditorurl != null)
-			return tryeditorurl;
-		else
-			throw new RuntimeException("try editor url not specified in the Configuration.properties file.");
 	}
 
 }
