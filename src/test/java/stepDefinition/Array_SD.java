@@ -16,8 +16,6 @@ public class Array_SD {
 	ArrayPage arrayPage = new ArrayPage();
 	String Excelpath = ConfigReader.getexcelfilepath();
 	static String expectedMsg;
-	static String code;
-	//Scenario scenario=.
 
 	// @TS_array_02
 	@Given("The user is on the {string} after logged in")
