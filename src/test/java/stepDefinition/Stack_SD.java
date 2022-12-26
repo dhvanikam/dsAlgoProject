@@ -16,15 +16,7 @@ import utilities.Loggerload;
 public class Stack_SD {
 	StackPage stackpage = new StackPage();
 	String Excelpath = ConfigReader.getexcelfilepath();
-	String expectedMsg;
-	
-	// @TS_stack_02
-	@Given("The user is on the {string} after logged in")
-	public void the_user_is_on_the_after_logged_in(String pagename) {
-	    String page_name = pagename.replaceAll("\\s+", "");
-	    stackpage.navigateTo(page_name);
-		Loggerload.info("The user is on the " + pagename + " after logged in");
-	}
+	String expectedMsg;	
 
 	@When("The user selects Stack item from the drop down menu")
 	public void the_user_selects_stack_item_from_the_drop_down_menu() {
