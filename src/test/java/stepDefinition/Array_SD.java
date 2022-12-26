@@ -17,20 +17,18 @@ public class Array_SD {
 	String Excelpath = ConfigReader.getexcelfilepath();
 	static String expectedMsg;
 	static String code;
-	
+	//Scenario scenario=.
 
 	// @TS_array_02
 	@Given("The user is on the {string} after logged in")
 	public void the_user_is_on_the_after_logged_in(String pagename) {
 		String page_name = pagename.replaceAll("\\s+", "");
 		arrayPage.navigateTo(page_name);
-		Loggerload.info("The user is on the" + pagename + "after logged in");
+		Loggerload.info("The user is on the " + pagename + " after logged in");
 	}
 
 	@When("The user select Array item from the drop down menu")
 	public void the_user_select_array_item_from_the_drop_down_menu() {
-		Loggerload.info("User click on Data Structure dropdown ");
-		Loggerload.info("User select Array from Data Structure dropdown ");
 		arrayPage.dropdown_Array();
 	}
 
@@ -40,6 +38,7 @@ public class Array_SD {
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
 		assertEquals(Title, pagename, "Title do not match");
+	
 	}
 
 	// @TS_array_03
@@ -82,7 +81,6 @@ public class Array_SD {
 			throws InvalidFormatException, IOException {
 		arrayPage.enterPythonCode(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
-		arrayPage.clickOnRunButton();
 	}
 
 	@When("The user clicks on run button")
