@@ -49,9 +49,9 @@ public class ArrayPage {
 	}
 
 	public void dropdown_Array() {
-		Loggerload.info("click " + dropdown.getText() + "on drop down");
+		Loggerload.info("click " + dropdown.getText() + " on drop down");
 		dropdown.click();
-		Loggerload.info("click " + dropdown_array.getText() + "from the drop down");
+		Loggerload.info("click " + dropdown_array.getText() + " from the drop down");
 		dropdown_array.click();
 	}
 
@@ -150,6 +150,7 @@ public class ArrayPage {
 	}
 
 	public void navigateTotryEditor() {
+		
 		driver.get(tryEditorURL);
 
 	}
@@ -160,16 +161,19 @@ public class ArrayPage {
 	}
 
 	public void maxConsOnes() {
+		Loggerload.info("The user clicks the Max Consecutive Ones link");
 		mostConOnesLink.click();
 
 	}
 
 	public void findNumbers() {
+		Loggerload.info("The user clicks the Find Numbers with Even Number of Digits link");
 		findEvenNumLink.click();
 
 	}
 
 	public void squaresSortedArray() {
+		Loggerload.info("The user clicks the Squares of a Sorted Array link");
 		sqOfSortedArrayLink.click();
 	}
 	
