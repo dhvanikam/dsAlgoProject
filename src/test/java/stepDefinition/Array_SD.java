@@ -19,6 +19,7 @@ public class Array_SD {
 
 	@When("The user select Array item from the drop down menu")
 	public void the_user_select_array_item_from_the_drop_down_menu() {
+		Loggerload.info("The user select Array item from the drop down menu");
 		arrayPage.dropdown_Array();
 	}
 
@@ -61,6 +62,7 @@ public class Array_SD {
 	// @TS_array_05
 	@Given("The user is in a page having an tryEditor with a Run button to test")
 	public void the_user_is_in_a_page_having_an_try_editor_with_a_run_button_to_test() {
+		Loggerload.info("The user is in a page having an tryEditor with a Run button to test");
 		arrayPage.navigateTotryEditor();
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
@@ -69,6 +71,7 @@ public class Array_SD {
 	@When("The user enter valid python code in tryEditor from sheet {string} and {int}")
 	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and(String sheetName, Integer rowNum)
 			throws InvalidFormatException, IOException {
+		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" +sheetName+ " and row number : " + rowNum);
 		arrayPage.enterPythonCode(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
 	}
@@ -80,8 +83,6 @@ public class Array_SD {
 
 	@Then("The user should be presented with Run result")
 	public void the_user_should_be_presented_with_run_result() throws InterruptedException {
-		Loggerload.info("Expected result - Excel Sheet :  " + expectedMsg);
-
 		String actualMsg = arrayPage.getActualResult();
 		Loggerload.info("Actual result  :" + actualMsg);
 		assertEquals(actualMsg, expectedMsg, "Result do not match");
@@ -92,13 +93,14 @@ public class Array_SD {
 	@When("The user enter python code with invalid syntax in tryEditor from sheet {string} and {int}")
 	public void the_user_enter_python_code_with_invalid_syntax_in_try_editor_from_sheet_and(String sheetName,
 			Integer rowNum) throws InvalidFormatException, IOException {
+		Loggerload.info("The user enter python code with invalid syntax in tryEditor from sheetname :" +sheetName+ " and row number : " + rowNum);
 		arrayPage.enterPythonCode(sheetName, rowNum);
 	}
 
 	@Then("The user should be presented with error message")
 	public void the_user_should_be_presented_with_error_message() {
 		String actualMsg = arrayPage.getErrorText();
-		Loggerload.info("Actual result  :" + actualMsg);
+		Loggerload.info("Actual Error message is  :" + actualMsg);
 	}
 
 	// @TS_array_07
@@ -162,6 +164,7 @@ public class Array_SD {
 	// @TS_array_21
 	@Given("The user is on {string} page of {string} after logged in")
 	public void the_user_is_on_page_of_after_logged_in(String pname, String pname2) {
+		Loggerload.info("The user is on "+pname+"page of "+pname2+" after logged in");
 		String page_name = pname + pname2.replaceAll("\\s+", "");
 		arrayPage.navigateTo(page_name);
 	}
@@ -169,6 +172,7 @@ public class Array_SD {
 	@When("The user enter valid python code in tryEditor from sheet {string} and {int} for the question")
 	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and_for_the_question(String sheetName,
 			Integer rowNum) throws InvalidFormatException, IOException {
+		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" +sheetName+ " and row number :" + rowNum);
 		arrayPage.enterPythonCodePractice(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
 	}
@@ -180,10 +184,8 @@ public class Array_SD {
 
 	@Then("The user should be presented with successful submission message")
 	public void the_user_should_be_presented_with_successful_submission_message() throws InterruptedException {
-
-		Loggerload.info("Expected result - Excel Sheet :  " + expectedMsg);
 		String actualMsg = arrayPage.getActualResult();
-		Loggerload.info("Actual result  :" + actualMsg);
+		Loggerload.info("Actual result of successful submission message :" + actualMsg);
 		assertEquals(actualMsg, expectedMsg, "Result do not match");
 	}
 
@@ -192,6 +194,7 @@ public class Array_SD {
 	
 	@When("The user clicks the Max Consecutive Ones link")
 	public void the_user_clicks_the_max_consecutive_ones_link() {
+		
 		arrayPage.maxConsOnes();
 	}
 
