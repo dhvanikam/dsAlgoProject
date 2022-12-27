@@ -149,9 +149,5 @@ public class QueuePage {
 		Loggerload.info("User clicked on Practice Questions link");
 	}
 
-	public void navigateTo(String pagename) {
-		String urlName = ConfigReader.geturl(pagename);
-		driver.get(urlName);
-	}
-
+	
 }
