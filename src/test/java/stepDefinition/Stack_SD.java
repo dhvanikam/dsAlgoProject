@@ -73,7 +73,7 @@ public class Stack_SD {
 	}
 	
 	// @TS_stack_05
-	@Given("The user is in operationinstack page having an tryEditor with a Run button to test")
+	@Given("The user is in stack page having an tryEditor with a Run button to test")
 	public void the_user_is_in_operationinstack_page_having_an_try_editor_with_a_run_button_to_test() {
 		String Title = stackpage.getStackPageTitle();
 		Loggerload.info("Title of current page is :" + Title);
@@ -85,7 +85,7 @@ public class Stack_SD {
 		expectedMsg = stackpage.getExpectedResult(sheetName, rowNum);
 	}
 	
-	@When("The user clicks on Run button after Entering valid python code in opinstack tryEditor")
+	@When("The user clicks on Run button after Entering valid python code in stack tryEditor")
 	public void the_user_clicks_on_run_button_after_entering_valid_python_code_in_opinstack_try_editor() {
 		stackpage.clickOnRun();
 	}
@@ -104,7 +104,7 @@ public class Stack_SD {
 	    stackpage.enterStackPythoncode(sheetName, rowNum);
 	}
 	
-	@When("The user clicks on Run button after Entering invalid python code in opinstack tryEditor")
+	@When("The user clicks on Run button after Entering invalid python code in stack tryEditor")
 	public void the_user_clicks_on_run_button_after_entering_invalid_python_code_in_opinstack_try_editor() {
 	    stackpage.clickOnRun();
 	}

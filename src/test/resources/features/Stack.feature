@@ -26,20 +26,20 @@ Feature: User tests the stack page on the Ds algo application
     Then The user should be redirected to a page having an tryEditor with a Run button to test
  
 @TS_stack_05  
-   Scenario Outline: The user is able to navigate to operationinstack page having an tryEditor
-    Given The user is in operationinstack page having an tryEditor with a Run button to test
+   Scenario Outline: The user is able to run code in tryEditor
+    Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber>
-    And The user clicks on Run button after Entering valid python code in opinstack tryEditor
+    And The user clicks on Run button after Entering valid python code in stack tryEditor
     Then The user should be presented with Run output
 
     Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         0 |
 @TS_stack_06 
-  Scenario Outline: The user is able to navigate to operationinstack page having an tryEditor
-    Given The user is in operationinstack page having an tryEditor with a Run button to test
+  Scenario Outline: The user is able to get the error message for invalid syntax
+    Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber>
-    And The user clicks on Run button after Entering invalid python code in opinstack tryEditor
+    And The user clicks on Run button after Entering invalid python code in stack tryEditor
     Then The user should get the error message
 
     Examples: 
@@ -60,9 +60,9 @@ Feature: User tests the stack page on the Ds algo application
 
 @TS_stack_09
   Scenario Outline: The user is able to navigate to Implementation page having an tryEditor
-    Given The user is in Implementation page having an tryEditor with a Run button to test
-    When The user gets input from sheet "<Sheetname>" and <RowNumber> in imppage
-    And The user clicks on Run button after Entering valid python code in Implementation tryEditor
+    Given The user is in stack page having an tryEditor with a Run button to test
+    When The user gets input from sheet "<Sheetname>" and <RowNumber>
+    And The user clicks on Run button after Entering valid python code in stack tryEditor
     Then The user should be presented with Run output for implementation
 
     Examples: 
@@ -71,10 +71,10 @@ Feature: User tests the stack page on the Ds algo application
 
 @TS_stack_10  
   Scenario Outline: The user is able to navigate to Implementation page having an tryEditor
-    Given The user is in Implementation page having an tryEditor with a Run button to test
+    Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in Imppage
-    And The user clicks on Run button after Entering invalid python code in Implementation tryEditor
-    Then The user should get the error message for the Implementation page
+    And The user clicks on Run button after Entering invalid python code in stack tryEditor
+    Then The user should get the error message
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -94,10 +94,10 @@ Feature: User tests the stack page on the Ds algo application
 
 @TS_stack_13 
   Scenario Outline: The user is able to navigate to Applications page having an tryEditor
-    Given The user is in Applications page having an tryEditor with a Run button to test
+    Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in apppage
-    And The user clicks on Run button after Entering valid python code in Applications tryEditor
-    Then The user should be presented with Run output for Applications
+    And The user clicks on Run button after Entering valid python code in stack tryEditor
+    Then The user should be presented with Run output
 
     Examples: 
       | Sheetname  | RowNumber |
