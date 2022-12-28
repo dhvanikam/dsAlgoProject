@@ -53,6 +53,7 @@ public class ConfigReader {
 			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
 	}
 
+	// Signin
 	public static String getLoginPage() {
 		String loginurl = properties.getProperty("loginpage");
 		if (loginurl != null)
@@ -69,6 +70,7 @@ public class ConfigReader {
 			throw new RuntimeException("Excel file path not specified in the Configuration.properties file.");
 	}
 
+	// Array
 	public static String tryEditorURL() {
 		String tryeditorurl = properties.getProperty("tryeditorurl");
 		if (tryeditorurl != null)
@@ -85,6 +87,7 @@ public class ConfigReader {
 			throw new RuntimeException(pagename + " url not specified in the Configuration.properties file.");
 	}
 
+	// Stack
 	public static String getStackUrl() {
 		String stackurl = properties.getProperty("stackurl");
 		if (stackurl != null)
@@ -93,6 +96,7 @@ public class ConfigReader {
 			throw new RuntimeException("stack url not specified in the Configuration.properties file.");
 	}
 
+	// Queue
 	public static String getQueueUrl() {
 		String queueurl = properties.getProperty("queueurl");
 		if (queueurl != null)
@@ -144,12 +148,39 @@ public class ConfigReader {
 			throw new RuntimeException(pagename + "url not specified in the Configuration.properties file.");
 	}
 
+	// Register
 	public static String registerPageURL() {
 		String url = properties.getProperty("registerurl");
 		if (url != null)
 			return url;
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+
+	// Graph
+	public static String getGraphUrl() {
+		String graphurl = properties.getProperty("graphurl");
+		if (graphurl != null)
+			return graphurl;
+		else
+			throw new RuntimeException("graph url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getGraphGraphUrl() {
+		String graphgraphurl = properties.getProperty("graphgraphurl");
+		if (graphgraphurl != null)
+			return graphgraphurl;
+		else
+			throw new RuntimeException("graphgraph url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getGraphRepresentationsUrl() {
+		String graphrepresentationsurl = properties.getProperty("graphrepresentationsurl");
+		if (graphrepresentationsurl != null)
+			return graphrepresentationsurl;
+		else
+			throw new RuntimeException(
+					"graphrepresentations url is not specified in the Configuration.properties file.");
 	}
 
 }
