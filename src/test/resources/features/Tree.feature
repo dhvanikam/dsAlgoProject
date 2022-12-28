@@ -13,6 +13,7 @@ Scenario: The user is directed to "Tree" Page
     Given The user is on the "home page" after logged in
     When The user selects Tree item from the drop down menu
     Then The user should be directed to the "Tree" Page  
+    
 @TS_tree_03  
  Scenario: The user is able to navigate to "Overview of Trees" page
     Given The user is on the "Tree page" after logged in
@@ -60,7 +61,7 @@ Scenario: The user is able to navigate to Terminologies page having an tryEditor
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @Ts_tree_09
-Scenario Outline: The user is able to navigate to Terminologies page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -71,7 +72,7 @@ Scenario Outline: The user is able to navigate to Terminologies page having an t
       | pythonCode |         0 |
 
 @TS_tree_10
-Scenario Outline: The user is able to navigate to Terminologies page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
@@ -94,7 +95,7 @@ Scenario: The user is able to navigate to a page having an tryEditor
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_tree_13
-Scenario Outline: The user is able to navigate to Types of trees page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -105,7 +106,7 @@ Scenario Outline: The user is able to navigate to Types of trees page having an 
       | pythonCode |         0 |
     
 @TS_tree_14   
-Scenario Outline: The user is able to navigate to Types of trees page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
@@ -128,7 +129,7 @@ Scenario: The user is able to navigate to a page having an tryEditor
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_tree_17
-Scenario Outline: The user is able to navigate to Tree traversals page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -139,7 +140,7 @@ Scenario Outline: The user is able to navigate to Tree traversals page having an
       | pythonCode |         0 |
 
 @TS_tree_18
-Scenario Outline: The user is able to navigate to Tree traversals page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
@@ -162,7 +163,7 @@ Scenario: The user is able to navigate to a page having an tryEditor
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_tree_21
-Scenario Outline: The user is able to navigate to  Traversal illustration page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -173,7 +174,7 @@ Scenario Outline: The user is able to navigate to  Traversal illustration page h
       | pythonCode |         0 |
   
 @TS_tree_22    
-Scenario Outline: The user is able to navigate to Traversal illustration page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
@@ -196,7 +197,7 @@ Scenario: The user is able to navigate to a page having an tryEditor
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_tree_25      
-Scenario Outline: The user is able to navigate to binary trees page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -207,7 +208,7 @@ Scenario Outline: The user is able to navigate to binary trees page having an tr
       | pythonCode |         0 |
 
 @TS_tree_26    
-Scenario Outline: The user is able to navigate to Binary trees page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
@@ -230,7 +231,7 @@ Scenario: The user is able to navigate to "Types of Binary trees" Page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_tree_29    
-Scenario Outline: The user is able to navigate to types of binary trees page having an tryEditor
+Scenario Outline: The user is able to run code in tryEditor
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering valid python code in trees tryEditor
@@ -241,7 +242,7 @@ Scenario Outline: The user is able to navigate to types of binary trees page hav
       | pythonCode |         0 |  
 
 @TS_tree_30     
-Scenario Outline: The user is able to navigate to types of Binary trees page having an tryEditor
+Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in trees page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in trees
     And The user clicks on Run button after Entering invalid python code in trees tryEditor
