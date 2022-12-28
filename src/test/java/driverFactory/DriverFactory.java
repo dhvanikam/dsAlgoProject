@@ -8,12 +8,14 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import io.cucumber.java.Scenario;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.Loggerload;
 
 public class DriverFactory {
 
 	public static WebDriver driver;
+	private Scenario scenario;
 	//public static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
 	public WebDriver initializeDrivers(String browser) {
@@ -45,14 +47,21 @@ public class DriverFactory {
 		//Set Page load timeout
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		
-		//Set implicit wait
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
 		driver.manage().window().maximize();
 		
 		return getdriver();
 	}
 
+	public Scenario getScenario()
+    {
+        return scenario;
+    }
+    
+    public void setScenario(Scenario scenario)
+    {
+        this.scenario = scenario;
+    }
+    
 	public static synchronized WebDriver getdriver() {
 		return driver;
 				//threadDriver.get();
