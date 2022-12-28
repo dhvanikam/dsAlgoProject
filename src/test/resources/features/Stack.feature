@@ -59,20 +59,20 @@ Feature: User tests the stack page on the Ds algo application
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
 @TS_stack_09
-  Scenario Outline: The user is able to navigate to Implementation page having an tryEditor
+  Scenario Outline: The user is able to run code in tryEditor
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering valid python code in stack tryEditor
-    Then The user should be presented with Run output for implementation
+    Then The user should be presented with Run output
 
     Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         0 |
 
 @TS_stack_10  
-  Scenario Outline: The user is able to navigate to Implementation page having an tryEditor
+  Scenario Outline: The user is able to get the error message for invalid syntax
     Given The user is in stack page having an tryEditor with a Run button to test
-    When The user gets invalid input from sheet "<Sheetname>" and <RowNumber> in Imppage
+    When The user gets invalid input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering invalid python code in stack tryEditor
     Then The user should get the error message
 
