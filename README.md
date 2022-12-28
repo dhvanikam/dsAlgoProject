@@ -5,27 +5,20 @@
 * [General info](#general-info)
 * [Tools and Technologies](#tools-and-technologies)
 * [FrameWork](#framework)
-* [Setup](#setup)
+* [Reporting](#reporting)
 
 
 ## General info
-* Introduction
+* Introduction : Numpy Ninja’s “Data Structures and Algorithms(Ds Algo)” Project is learning tool It provides an excellent guide to implement algorithms from scratch like Arrays, Linked lists, Stack, Queue, Tree, Graph algorithms in Python
 
 ## Tools and Technologies
 Project is created with:
-* Java v11
-* Selenium-Java v4.5.0
-* cucumber-testng v7.9.0
-* log4j v2.19.0
-* allure-testng v2.20.1
-* webdrivermanager v5.3.1
-
-## Setup
-To run this project, 
-
-```
-$ cd ..
-```
+* Maven - Dependency management
+* Java
+* Selenium Webdriver
+* Cucumber with TestNG - BDD approach
+* log4j - Logging
+* Allure-testng - Reporting
 
 ## FrameWork
 ```mermaid
@@ -42,4 +35,10 @@ flowchart TD
     resources-->Exceldata
     resources-->features
     resources-->log4j
+```
+## Reporting
+To run this project, 
+
+```
+$ cd ..
 ```
