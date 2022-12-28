@@ -21,17 +21,6 @@ public class ElementsUtils {
 	String code;
 	String result;
 
-	public void clickElement(WebElement element) {
-		WebElement ele = new WebDriverWait(driver, Duration.ofSeconds(10))
-				.until(ExpectedConditions.visibilityOf(element));
-		if (ele.isDisplayed() && ele.isEnabled()) {
-
-			ele.click();
-
-		}
-		Loggerload.error("Element is not clickable");
-	}
-
 	public void waitForElement(WebElement element) {
 		new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(element));
 
@@ -59,9 +48,6 @@ public class ElementsUtils {
 			} else {
 				element.sendKeys(str1[i]);
 				element.sendKeys(Keys.RETURN);
-//				if (i != str1.length - 1) {
-//					element.sendKeys(Keys.RETURN);
-//				}
 			}
 		}
 		// element.sendKeys(code);
@@ -86,7 +72,7 @@ public class ElementsUtils {
 		ExcelReader reader = new ExcelReader();
 		List<Map<String, String>> testdata = reader.getData(Excelpath, sheetname);
 		result = testdata.get(rownumber).get("Result");
-		Loggerload.info("result is " + result);
+		Loggerload.info("Expected result from Excel sheetname " + sheetname + " and " + rownumber + " : " + result);
 		return result;
 	}
 }

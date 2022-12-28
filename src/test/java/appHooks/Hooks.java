@@ -38,8 +38,9 @@ public class Hooks {
 	@Before
 	public void scenario(Scenario scenario) {
 		Loggerload.info("===============================================================================================");
-		Loggerload.info(scenario.getName());
-		Loggerload.info("===============================================================================================\n");
+		Loggerload.info(scenario.getSourceTagNames() +" : "+scenario.getName());
+		Loggerload.info("-----------------------------------------------------------------------------------------------");
+		
 	}
 	@AfterStep
 	public void afterstep(Scenario scenario) {
