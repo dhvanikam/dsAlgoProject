@@ -124,7 +124,7 @@ Scenario: The user is able to navigate to "Tree Traversals" Page
 
 @TS_tree_16
 Scenario: The user is able to navigate to a page having an tryEditor
-    Given The user is on the "tree traversals" after logged in
+    Given The user is on the "tree traversals page" after logged in
     When The user clicks "Try Here" button in "tree" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
@@ -151,14 +151,14 @@ Scenario Outline: The user is able to get the error message for invalid syntax
       | pythonCode |         1 |
 
 @TS_tree_19
-Scenario: The user is able to navigate to "Traversal illustration" Page
+Scenario: The user is able to navigate to "Traversals illustration" Page
     Given The user is on the "Tree page" after logged in
-    When The user clicks on the Traversal illustration button
-    Then The user should be directed to Traversal illustration Page
+    When The user clicks on the Traversals illustration button
+    Then The user should be directed to Traversals illustration Page
 
 @TS_tree_20
 Scenario: The user is able to navigate to a page having an tryEditor
-    Given The user is on the "traversal illustration" after logged in
+    Given The user is on the "traversal illustration page" after logged in
     When The user clicks "Try Here" button in "tree" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
@@ -192,7 +192,7 @@ Scenario: The user is able to navigate to "Binary trees" Page
 
 @TS_tree_24  
 Scenario: The user is able to navigate to a page having an tryEditor
-    Given The user is on the "binary trees" after logged in
+    Given The user is on the "binary trees page" after logged in
     When The user clicks "Try Here" button in "tree" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
@@ -226,7 +226,7 @@ Scenario: The user is able to navigate to "Types of Binary trees" Page
 
 @TS_tree_28
     Scenario: The user is able to navigate to a page having an tryEditor
-    Given The user is on the "types of binary trees" after logged in
+    Given The user is on the "types of binary trees page" after logged in
     When The user clicks "Try Here" button in "tree" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
