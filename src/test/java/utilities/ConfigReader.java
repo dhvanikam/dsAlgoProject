@@ -8,7 +8,6 @@ import java.util.Properties;
 public class ConfigReader {
 	private static Properties properties;
 	private final static String propertyFilePath = "./src/test/resources/config/config.properties";
-
 	public static void loadConfig() throws Throwable {
 
 		try {
@@ -30,7 +29,6 @@ public class ConfigReader {
 	public static String getBrowserType() {
 		String browser = properties.getProperty("browser");
 		Loggerload.info("Get property BrowserType");
-		System.out.println(browser);
 		if (browser != null)
 			return browser;
 		else
@@ -86,7 +84,16 @@ public class ConfigReader {
 		else
 			throw new RuntimeException(pagename + " url not specified in the Configuration.properties file.");
 	}
-
+	
+	//Linked list
+	public static String getLinkedListUrl() {
+		String linkedlisturl = properties.getProperty("linkedlisturl");
+		if (linkedlisturl != null)
+			return linkedlisturl;
+		else
+			throw new RuntimeException("linked list url not specified in the Configuration.properties file.");
+	}
+	
 	// Stack
 	public static String getStackUrl() {
 		String stackurl = properties.getProperty("stackurl");
@@ -181,6 +188,15 @@ public class ConfigReader {
 		else
 			throw new RuntimeException(
 					"graphrepresentations url is not specified in the Configuration.properties file.");
+	}
+	
+	//Tree
+	public static String getTreeUrl() {
+		String treeurl = properties.getProperty("treeurl");
+		if (treeurl != null)
+			return treeurl;
+		else
+			throw new RuntimeException("tree url not specified in the Configuration.properties file.");
 	}
 
 }
