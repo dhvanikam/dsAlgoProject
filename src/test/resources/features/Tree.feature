@@ -222,7 +222,7 @@ Scenario Outline: The user is able to get the error message for invalid syntax
 Scenario: The user is able to navigate to "Types of Binary trees" Page
     Given The user is on the "Tree page" after logged in
     When The user clicks on the types of binary trees button
-    Then The user should be directed to the "Types of Binary trees" of tree Page
+    Then The user should be directed to the "Types of Binary Trees" of tree Page
 
 @TS_tree_28
     Scenario: The user is able to navigate to a page having an tryEditor
@@ -428,7 +428,7 @@ Scenario Outline: The user is able to get the error message for invalid syntax
 Scenario: The user is able to navigate to "Implementation of BST" Page
     Given The user is on the "Tree page" after logged in
     When The user clicks on the Implementation of BST button
-    Then The user should be directed to the "Implementation Of bst" of tree Page
+    Then The user should be directed to the "Implementation Of BST" of tree Page
 
 @TS_tree_52
     Scenario: The user is able to navigate to a page having an tryEditor
