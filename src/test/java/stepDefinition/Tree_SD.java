@@ -55,6 +55,7 @@ public class Tree_SD {
 // @TS_tree_05
 	@Given("The user is in trees page having an tryEditor with a Run button to test")
 	public void the_user_is_in_trees_page_having_an_try_editor_with_a_run_button_to_test() {
+		treepage.navigateTotryEditor();
 		String Title = treepage.getTreePageTitle();
 		Loggerload.info("Title of current page is :" + Title);
 	}
@@ -149,13 +150,13 @@ public class Tree_SD {
 // @TS_tree_18
 
 // @TS_tree_19
-	@When("The user clicks on the Traversal illustration button")
-	public void the_user_clicks_on_the_traversal_illustration_button() {
+	@When("The user clicks on the Traversals illustration button")
+	public void the_user_clicks_on_the_traversals_illustration_button() {
 	    treepage.clickOnTrav_illus_Link();
 	}
 
-	@Then("The user should be directed to Traversal illustration Page")
-	public void the_user_should_be_directed_to_traversal_illustration_page() {
+	@Then("The user should be directed to Traversals illustration Page")
+	public void the_user_should_be_directed_to_traversals_illustration_page() {
 		Loggerload.info("User redirected to tree DataStructure Page ");
 		String Title = treepage.getTreePageTitle();
 		Loggerload.info("Title of current page is :" + Title);
