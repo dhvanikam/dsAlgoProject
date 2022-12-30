@@ -151,7 +151,7 @@ Scenario Outline: The user is able to get the error message for invalid syntax
       | pythonCode |         1 |
 
 @TS_tree_19
-Scenario: The user is able to navigate to "Traversal illustration" Page
+Scenario: The user is able to navigate to "Traversals illustration" Page
     Given The user is on the "Tree page" after logged in
     When The user clicks on the Traversal illustration button
     Then The user should be directed to the "Traversals-Illustration" of tree Page
