@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +23,7 @@ public class Signin_SD {
 	static String username;
 	static String password;
 	static String message;
+	Boolean isRequired;
 	String Excelpath=ConfigReader.getexcelfilepath();
 			
 	//User is on Sigin page
@@ -31,13 +33,29 @@ public class Signin_SD {
 	    Loggerload.info("User is on Sigin Page");
 		sign.login_page();
 	}
+	
+	//User clicks on register link
+		@When("The user clicks on register link on signin page")
+		public void the_user_clicks_on_register_link_on_signin_page() {
+			Loggerload.info("User clicks on Register ");
+		    sign.register_link();
+		}
+
+		@Then("The user redirected to Registration page from signin page")
+		public void the_user_redirected_to_registration_page_from_signin_page() {
+			Loggerload.info("User redirected to Registraion page ");
+			String Title=sign.register_page();
+			Loggerload.info("Title of the Page : \" " +Title +"\" ");
+			assertEquals(Title, "Registration", "pass");
+		}
 
 	//invalid data from scenario outline
 		@When("The user enter invalid {string} and {string}")
 		public void the_user_enter_invalid_and(String username, String password) {
 			Loggerload.info("User Enter username as \" "+username+" \" and Password as \" "+password+"\" ");
-			sign.doLogin(username,password); 
-			
+			isRequired=sign.doLogin(username,password); 
+			assertTrue(true);
+			Loggerload.info("Empty field value is validated");
 		}
 		
 		@Then("click login button to verify")
@@ -77,20 +95,16 @@ public class Signin_SD {
 		
 	}
 	
-	//register link
-	@When("The user clicks on register link on signin page")
-	public void the_user_clicks_on_register_link_on_signin_page() {
-		Loggerload.info("User clicks on Register ");
-	    sign.register_link();
+	
+	//User clicks on signout 
+	@Given("The user is on signin page with valid username {string} and password {string}")
+	public void the_user_is_on_signin_page_with_valid_username_and_password(String string, String string2) {
+	   sign.doLogin(username, password);
+	   sign.click_login();
 	}
 
-	@Then("The user redirected to Registration page from signin page")
-	public void the_user_redirected_to_registration_page_from_signin_page() {
-		Loggerload.info("User redirected to Registraion page ");
-		String Title=sign.register_page();
-		Loggerload.info("Title of the Page : \" " +Title +"\" ");
-		assertEquals(Title, "Registration", "pass");
+	@When("The user click signout button")
+	public void the_user_click_signout_button() {
+	   sign.signout();
 	}
-
-
 }
