@@ -63,13 +63,13 @@ public class LinkedList_SD {
 	}
 
 //@TS_ll_05
-
-	@Given("The user is in a tryhere page having an tryEditor with a Run button to test")
-	public void the_user_is_in_a_tryhere_page_having_an_try_editor_with_a_run_button_to_test() {
+	
+	@Given("The user is in a try here page having  tryEditor with a Run button to test")
+	public void the_user_is_in_a_try_here_page_having_try_editor_with_a_run_button_to_test() {
 		Loggerload.info("The user is in a page having an tryEditor with a Run button to test");
 		ll.navigateTotryEditor();
 		String Title = ll.getLinkedListPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
+		Loggerload.info("Title of current page is :" + Title); 
 	}
 
 	@When("The user Enter valid python code in tryEditor from sheet {string} and {int}")
