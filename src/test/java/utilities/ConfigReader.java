@@ -1,13 +1,9 @@
 package utilities;
 
-import static org.junit.Assert.assertNotNull;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-
-import org.bouncycastle.crypto.RuntimeCryptoException;
 
 public class ConfigReader {
 	private static Properties properties;
@@ -48,8 +44,7 @@ public class ConfigReader {
 		else
 			throw new RuntimeException("url not specified in the Configuration.properties file.");
 	}
-	
-	
+
 	public static String getHomePage() {
 		String homeurl = properties.getProperty("homepage");
 		if (homeurl != null)
@@ -57,7 +52,8 @@ public class ConfigReader {
 		else
 			throw new RuntimeException("Homeurl not specified in the Configuration.properties file.");
 	}
-	
+
+	// Signin
 	public static String getLoginPage() {
 		String loginurl = properties.getProperty("loginpage");
 		if (loginurl != null)
@@ -74,14 +70,24 @@ public class ConfigReader {
 			throw new RuntimeException("Excel file path not specified in the Configuration.properties file.");
 	}
 
-	public static String getArrayUrl() {
-		String arrayurl = properties.getProperty("arrayurl");
-		if (arrayurl != null)
-			return arrayurl;
+	// Array
+	public static String tryEditorURL() {
+		String tryeditorurl = properties.getProperty("tryeditorurl");
+		if (tryeditorurl != null)
+			return tryeditorurl;
 		else
-			throw new RuntimeException("array url not specified in the Configuration.properties file.");
+			throw new RuntimeException("tryeditorurl not specified in the Configuration.properties file.");
 	}
 
+	public static String geturl(String pagename) {
+		String url = properties.getProperty(pagename);
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException(pagename + " url not specified in the Configuration.properties file.");
+	}
+
+	// Stack
 	public static String getStackUrl() {
 		String stackurl = properties.getProperty("stackurl");
 		if (stackurl != null)
@@ -90,28 +96,91 @@ public class ConfigReader {
 			throw new RuntimeException("stack url not specified in the Configuration.properties file.");
 	}
 
-	public static String tryURL(String pagename) {
-		String url = properties.getProperty(pagename);
-		if (url!= null)
-		return url;
+	// Queue
+	public static String getQueueUrl() {
+		String queueurl = properties.getProperty("queueurl");
+		if (queueurl != null)
+			return queueurl;
 		else
-			throw new RuntimeException(pagename+"url not specified in the Configuration.properties file.");
+			throw new RuntimeException("queue url is not specified in the Configuration.properties file.");
 	}
 
-	public static String geturl(String pagename) {
-		String url = properties.getProperty(pagename);
-		if (url!= null)
-		return url;
+	public static String getQPracQuesUrl() {
+		String qpracquesurl = properties.getProperty("qpracquesurl");
+		if (qpracquesurl != null)
+			return qpracquesurl;
 		else
-			throw new RuntimeException(pagename+"url not specified in the Configuration.properties file.");
-		}
+			throw new RuntimeException(
+					"Queue Practice Questions url is not specified in the Configuration.properties file.");
+	}
 
-	public static String tryEditorURL() {
-		String tryeditorurl = properties.getProperty("tryeditorurl");
-		if (tryeditorurl != null)
-			return tryeditorurl;
+	public static String getImpOfQPythonUrl() {
+		String impofqpythonurl = properties.getProperty("impofqpythonurl");
+		if (impofqpythonurl != null)
+			return impofqpythonurl;
 		else
-			throw new RuntimeException("try editor url not specified in the Configuration.properties file.");
+			throw new RuntimeException(
+					"Implementation of Queue in Python url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getEditorUrl() {
+		String editorurl = properties.getProperty("editorurl");
+		if (editorurl != null)
+			return editorurl;
+		else
+			throw new RuntimeException("Editor url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getImpCollDQUrl() {
+		String impcolldqurl = properties.getProperty("impcolldqurl");
+		if (impcolldqurl != null)
+			return impcolldqurl;
+		else
+			throw new RuntimeException(
+					"Implementation using collections deque url is not specified in the Configuration.properties file.");
+	}
+
+	public static String tryURL(String pagename) {
+		String url = properties.getProperty(pagename);
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException(pagename + "url not specified in the Configuration.properties file.");
+	}
+
+	// Register
+	public static String registerPageURL() {
+		String url = properties.getProperty("registerurl");
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException("url not specified in the Configuration.properties file.");
+	}
+
+	// Graph
+	public static String getGraphUrl() {
+		String graphurl = properties.getProperty("graphurl");
+		if (graphurl != null)
+			return graphurl;
+		else
+			throw new RuntimeException("graph url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getGraphGraphUrl() {
+		String graphgraphurl = properties.getProperty("graphgraphurl");
+		if (graphgraphurl != null)
+			return graphgraphurl;
+		else
+			throw new RuntimeException("graphgraph url is not specified in the Configuration.properties file.");
+	}
+
+	public static String getGraphRepresentationsUrl() {
+		String graphrepresentationsurl = properties.getProperty("graphrepresentationsurl");
+		if (graphrepresentationsurl != null)
+			return graphrepresentationsurl;
+		else
+			throw new RuntimeException(
+					"graphrepresentations url is not specified in the Configuration.properties file.");
 	}
 
 }
