@@ -1,7 +1,7 @@
 package pageObjects;
 
 import java.io.IOException;
-import java.time.Duration;
+
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,6 @@ import utilities.Loggerload;
 public class LinkedListPage {
 	public static WebDriver driver = DriverFactory.getdriver();
 	ElementsUtils eleUtil = new ElementsUtils();
-	// String linkedlistURL=ConfigReader.getLinkedListUrl();
 	String tryEditorURL = ConfigReader.tryEditorURL();
 
 	// Homepage
@@ -28,17 +27,17 @@ public class LinkedListPage {
 	@FindBy(xpath = "//a[@href='/linked-list']")WebElement dropdown_linkedlist;
 
 	// LinkedListPage
-	@FindBy (xpath="//a[@href='introduction']")WebElement introductionLink;  //https://dsportalapp.herokuapp.com/linked-list/introduction/
-	@FindBy (xpath="//a[@href='creating-linked-list']")WebElement creatinglinkedlistLink; //https://dsportalapp.herokuapp.com/linked-list/creating-linked-list/
-	@FindBy (xpath="//a[@href='types-of-linked-list']")WebElement typesOfLLLink;  //https://dsportalapp.herokuapp.com/linked-list/types-of-linked-list/
-	@FindBy (xpath="//a[@href='implement-linked-list-in-python']")WebElement implementLLInPythonLink; //https://dsportalapp.herokuapp.com/linked-list/implement-linked-list-in-python/
-	@FindBy (xpath="//a[@href='traversal']")WebElement traversalLink; //https://dsportalapp.herokuapp.com/linked-list/traversal/
-	@FindBy (xpath="//a[@href='insertion-in-linked-list']")WebElement insertionLink; //https://dsportalapp.herokuapp.com/linked-list/insertion-in-linked-list/
-	@FindBy (xpath="//a[@href='deletion-in-linked-list']")WebElement deletionLink; //https://dsportalapp.herokuapp.com/linked-list/deletion-in-linked-list/
-	@FindBy (xpath="//a[@href='/linked-list/practice']")WebElement practiceQuestionLink; //https://dsportalapp.herokuapp.com/linked-list/practice
+	@FindBy (xpath="//a[@href='introduction']")WebElement introductionLink;  
+	@FindBy (xpath="//a[@href='creating-linked-list']")WebElement creatinglinkedlistLink; 
+	@FindBy (xpath="//a[@href='types-of-linked-list']")WebElement typesOfLLLink;  
+	@FindBy (xpath="//a[@href='implement-linked-list-in-python']")WebElement implementLLInPythonLink; 
+	@FindBy (xpath="//a[@href='traversal']")WebElement traversalLink; 
+	@FindBy (xpath="//a[@href='insertion-in-linked-list']")WebElement insertionLink; 
+	@FindBy (xpath="//a[@href='deletion-in-linked-list']")WebElement deletionLink; 
+	@FindBy (xpath="//a[@href='/linked-list/practice']")WebElement practiceQuestionLink; 
 	
 	@FindBy(xpath = "//a[@href='/tryEditor']")WebElement tryHereLink;
-	@FindBy(xpath = "//*[@class=' CodeMirror-line ']")WebElement editorInput; // textarea[@tabindex='0']
+	@FindBy(xpath = "//*[@class=' CodeMirror-line ']")WebElement editorInput; 
 	@FindBy(xpath = "//*[@id='answer_form']/button")WebElement runButton;
 	@FindBy(id = "output")WebElement output;
 
@@ -60,20 +59,14 @@ public class LinkedListPage {
 	}
 
 	public void click_introduction() {
-		Loggerload.info("click " + introductionLink.getText()); // Introduction
+		Loggerload.info("click " + introductionLink.getText());
 		introductionLink.click();
-		Loggerload.info(" Title of the page " + driver.getTitle()); // https://dsportalapp.herokuapp.com/linked-list/introduction/
+		Loggerload.info(" Title of the page " + driver.getTitle());
 	}
 
 	public void click_Tryhere(String bname, String dsname) {
-		// Loggerload.info("click " + tryHereLink.getText() + " In the page" ); //Try
-		// here >>>
 		Loggerload.info("click on " + bname + " button on " + dsname);
 		tryHereLink.click();
-	}
-
-	public void editorpagetitle() {
-		Loggerload.info(" Title of the page " + driver.getTitle()); // https://dsportalapp.herokuapp.com/tryEditor
 	}
 
 	public void enterPythonCode(String sheetname, int rownumber) throws InvalidFormatException, IOException {
@@ -87,7 +80,6 @@ public class LinkedListPage {
 	}
 
 	public String getActualResult() {
-		// eleUtil.waitForElement(output);
 		return output.getText();
 	}
 
@@ -101,7 +93,6 @@ public class LinkedListPage {
 		return errorMsg;
 	}
 
-	// public void navigateToLinkedListPage()
 	public void navigateTotryEditor() {
 		driver.get(tryEditorURL);
 	}

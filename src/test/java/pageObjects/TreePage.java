@@ -15,7 +15,6 @@ import utilities.Loggerload;
 
 public class TreePage {
 
-	
 	public static WebDriver driver=DriverFactory.getdriver();
 	ElementsUtils eleUtil = new ElementsUtils();
 	String tryEditorURL=ConfigReader.tryEditorURL();
@@ -33,13 +32,13 @@ public class TreePage {
 		@FindBy (xpath="//*[@href='traversals-illustration']") WebElement trav_illustrationsLink;
 		@FindBy (xpath="//*[@href='binary-trees']") WebElement binarytreesLink;
 		@FindBy (xpath="//*[@href='types-of-binary-trees']") WebElement typesofBinaryTreesLink;
-		@FindBy (xpath="//a[@href='implementation-in-python']")WebElement  implementationInPythonLink;//https://dsportalapp.herokuapp.com/tree/implementation-in-python/
-		@FindBy (xpath="//a[@href='binary-tree-traversals']")WebElement binaryTreeTraversalsLink;//https://dsportalapp.herokuapp.com/tree/binary-tree-traversals/
-		@FindBy (xpath="//a[@href='implementation-of-binary-trees']")WebElement implementationOfBinaryTreesLink;//https://dsportalapp.herokuapp.com/tree/implementation-of-binary-trees/
-		@FindBy (xpath="//a[@href='applications-of-binary-trees']")WebElement applicationsOfBinaryTreesLink;//https://dsportalapp.herokuapp.com/tree/applications-of-binary-trees/
-		@FindBy (xpath="//a[@href='binary-search-trees']")WebElement binarySearchTreesLink;//https://dsportalapp.herokuapp.com/tree/binary-search-trees/
-		@FindBy (xpath="//a[@href='implementation-of-bst']")WebElement implementationOfBSTLink;//https://dsportalapp.herokuapp.com/tree/implementation-of-bst/
-		@FindBy (xpath="//a[@href='/tree/practice']")WebElement practiceQuestionLink;//https://dsportalapp.herokuapp.com/tree/practice
+		@FindBy (xpath="//a[@href='implementation-in-python']")WebElement  implementationInPythonLink;
+		@FindBy (xpath="//a[@href='binary-tree-traversals']")WebElement binaryTreeTraversalsLink;
+		@FindBy (xpath="//a[@href='implementation-of-binary-trees']")WebElement implementationOfBinaryTreesLink;
+		@FindBy (xpath="//a[@href='applications-of-binary-trees']")WebElement applicationsOfBinaryTreesLink;
+		@FindBy (xpath="//a[@href='binary-search-trees']")WebElement binarySearchTreesLink;
+		@FindBy (xpath="//a[@href='implementation-of-bst']")WebElement implementationOfBSTLink;
+		@FindBy (xpath="//a[@href='/tree/practice']")WebElement practiceQuestionLink;
 		
 		@FindBy (xpath="//a[@href='/tryEditor']")WebElement TryHereLink;
 		@FindBy (xpath="//textarea[@tabindex='0']")WebElement editorInput;
@@ -49,16 +48,16 @@ public class TreePage {
 	
 		public TreePage() {
 			PageFactory.initElements(driver, this);
-		}		
-		
-	// Dropdown
+		}
+
+		// Dropdown
 		public void dropdown_Tree() {
 			Loggerload.info("click " + dropdown.getText() + "on drop down");
 			dropdown.click();
 			Loggerload.info("click " + dropdown_tree.getText() + "from the drop down");
 			dropdown_tree.click();
 		}
-		
+
 		public String getTreePageTitle() {
 			String title = driver.getTitle();
 			return title;
@@ -69,14 +68,16 @@ public class TreePage {
 			overviewOfTreesLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_Tryhere(String bname, String dsname) {
 			Loggerload.info("click on " + bname + " button on " + dsname);
 			TryHereLink.click();
 		}
 
-		public void enterTreePythoncode(String sheetname, Integer rownumber) throws InvalidFormatException, IOException{
+		public void enterTreePythoncode(String sheetname, Integer rownumber)
+				throws InvalidFormatException, IOException {
 			String code = eleUtil.getCodefromExcel(sheetname, rownumber);
-			eleUtil.enterCode(code, editorInput);	
+			eleUtil.enterCode(code, editorInput);
 		}
 
 		public String getExpectedResult(String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
@@ -99,12 +100,14 @@ public class TreePage {
 		}
 
 		public void navigateTotryEditor() {
-			driver.get(tryEditorURL);		
+			driver.get(tryEditorURL);
 		}
+
 		public void navigateTo(String pagename) {
 			String urlName = ConfigReader.geturl(pagename);
 			driver.get(urlName);
 		}
+
 		public void clickOnTerminologiesLink() {
 			Loggerload.info("click " + terminologiesLink.getText() + " On tree page");
 			terminologiesLink.click();
@@ -140,44 +143,47 @@ public class TreePage {
 			typesofBinaryTreesLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_implementationinPython() {
 			Loggerload.info("click " + implementationInPythonLink.getText() + " On tree page");
-			implementationInPythonLink.click();	
+			implementationInPythonLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_binaryTreeTraversals() {
 			Loggerload.info("click " + binaryTreeTraversalsLink.getText() + " On tree page");
 			binaryTreeTraversalsLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_implementationOfBinaryTrees() {
 			Loggerload.info("click " + implementationOfBinaryTreesLink.getText() + " On tree page");
 			implementationOfBinaryTreesLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_applicationsOfBinaryTrees() {
 			Loggerload.info("click " + applicationsOfBinaryTreesLink.getText() + " On tree page");
 			applicationsOfBinaryTreesLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_binarySearchTrees() {
 			Loggerload.info("click " + binarySearchTreesLink.getText() + " On tree page");
 			binarySearchTreesLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_implementationOfBST() {
 			Loggerload.info("click " + implementationOfBSTLink.getText() + " On tree page");
 			implementationOfBSTLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
+
 		public void click_practiceQuestion() {
 			Loggerload.info("click " + practiceQuestionLink.getText() + " On tree page");
 			practiceQuestionLink.click();
 			Loggerload.info(" Title of the page " + driver.getTitle());
 		}
 
-		
-		
-	
-	
-}
+	}

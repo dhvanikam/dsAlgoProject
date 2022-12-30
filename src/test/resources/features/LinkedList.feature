@@ -221,7 +221,7 @@ Feature: Testing LinkedList page
   Scenario: user navigated to "linked list" page
     Given The user is on the "Linked List page" after logged in
     When The user clicks the Deletion button
-    Then The user should be directed to "Deletion" of Linked List Page
+    Then The user should be directed to "deletion" of Linked List Page
 
   @TS_ll_28
   Scenario: user validating "Deletion"  with try editor

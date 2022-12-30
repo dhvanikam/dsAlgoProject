@@ -45,8 +45,6 @@ public class LinkedList_SD {
 		String Title = ll.getLinkedListPageTitle();
 		Loggerload.info("Title of current page is checking:" + Title);
 		assertEquals(Title, pagename, "Title do not match");
-
-		// assertEquals(Title, "Introduction", "Title do not match");
 	}
 
 //@TS_ll_04
@@ -104,7 +102,6 @@ public class LinkedList_SD {
 		Loggerload.info("The user enter python code with invalid syntax in tryEditor from sheetname :" + sheetName
 				+ " and row number : " + rowNum);
 		ll.enterPythonCode(sheetName, rowNum);
-		// expectedMsg = ll.getExpectedResult(sheetName, rowNum);
 	}
 
 	@Then("The user get the error message")
