@@ -26,7 +26,7 @@ Feature: User launch dsalgo application and test Graph page
     Then The user should be directed to Editor page with Run button
 
   @TS_graph_05
-  Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
+  Scenario Outline: The user is able to run code in Editor
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -37,7 +37,7 @@ Feature: User launch dsalgo application and test Graph page
       | pythonCode |         0 |
 
   @TS_graph_06
-  Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
+  Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -60,7 +60,7 @@ Feature: User launch dsalgo application and test Graph page
     Then The user navigates to Editor page with Run button
 
   @TS_graph_09
-  Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
+  Scenario Outline: The user is able to run code in Editor
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -71,7 +71,7 @@ Feature: User launch dsalgo application and test Graph page
       | pythonCode |         0 |
       
   @TS_graph_10
-  Scenario Outline: The user is able to navigate to a page having an Editor and run the python code
+  Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
