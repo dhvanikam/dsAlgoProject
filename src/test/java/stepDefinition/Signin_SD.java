@@ -46,7 +46,7 @@ public class Signin_SD {
 		Loggerload.info("User redirected to Registraion page ");
 		String Title = sign.register_page();
 		Loggerload.info("Title of the Page : \" " + Title + "\" ");
-		assertEquals(Title, "Registration", "pass");
+		assertEquals(Title, "Registration", "Title do not match");
 	}
 
 	// invalid data from scenario outline
