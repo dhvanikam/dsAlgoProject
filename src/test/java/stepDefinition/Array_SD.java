@@ -25,11 +25,11 @@ public class Array_SD {
 
 	@Then("The user be directed to {string} Data Structure Page")
 	public void the_user_be_directed_to_data_structure_page(String pagename) {
-		Loggerload.info("User redirected to Array Data Structure Page ");
+		Loggerload.info("User redirected to " + pagename + " Page ");
 		String Title = arrayPage.getArrayPageTitle();
 		Loggerload.info("Title of current page is : " + Title);
 		assertEquals(Title, pagename, "Title do not match");
-	
+
 	}
 
 	// @TS_array_03
@@ -40,22 +40,23 @@ public class Array_SD {
 
 	@Then("The user should be redirected to {string} page")
 	public void the_user_should_be_redirected_to_page(String pagename) {
-		Loggerload.info("User redirected to Array Data Structure Page ");
+		Loggerload.info("User redirected to " + pagename + " Page ");
 		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
+		Loggerload.info("Title of current page is : " + Title);
 		assertEquals(Title, pagename, "Title do not match");
 	}
 
 	// @TS_array_04
 	@When("The user clicks {string} button on {string} page")
 	public void the_user_clicks_button_on_page(String btnname, String dstname) {
-		arrayPage.clickOnTryHereLink(btnname,dstname);
+		arrayPage.clickOnTryHereLink(btnname, dstname);
 	}
+
 	@Then("The user should be redirected to a page having an tryEditor with a Run button to test")
 	public void the_user_should_be_redirected_to_a_page_having_an_try_editor_with_a_run_button_to_test() {
 		Loggerload.info("User redirected to a page having an tryEditor with a Run button to test");
 		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
+		Loggerload.info("Title of current page is : " + Title);
 		assertEquals(Title, "Assessment", "Title do not match");
 	}
 
@@ -65,13 +66,14 @@ public class Array_SD {
 		Loggerload.info("The user is in a page having an tryEditor with a Run button to test");
 		arrayPage.navigateTotryEditor();
 		String Title = arrayPage.getArrayPageTitle();
-		Loggerload.info("Title of current page is :" + Title);
+		Loggerload.info("Title of current page is : " + Title);
 	}
 
 	@When("The user enter valid python code in tryEditor from sheet {string} and {int}")
 	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and(String sheetName, Integer rowNum)
 			throws InvalidFormatException, IOException {
-		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" +sheetName+ " and row number : " + rowNum);
+		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" + sheetName
+				+ " and row number : " + rowNum);
 		arrayPage.enterPythonCode(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
 	}
@@ -84,7 +86,7 @@ public class Array_SD {
 	@Then("The user should be presented with Run result")
 	public void the_user_should_be_presented_with_run_result() throws InterruptedException {
 		String actualMsg = arrayPage.getActualResult();
-		Loggerload.info("Actual result  :" + actualMsg);
+		Loggerload.info("Actual result  : " + actualMsg);
 		assertEquals(actualMsg, expectedMsg, "Result do not match");
 
 	}
@@ -93,14 +95,16 @@ public class Array_SD {
 	@When("The user enter python code with invalid syntax in tryEditor from sheet {string} and {int}")
 	public void the_user_enter_python_code_with_invalid_syntax_in_try_editor_from_sheet_and(String sheetName,
 			Integer rowNum) throws InvalidFormatException, IOException {
-		Loggerload.info("The user enter python code with invalid syntax in tryEditor from sheetname :" +sheetName+ " and row number : " + rowNum);
+		Loggerload.info("The user enter python code with invalid syntax in tryEditor from sheetname :" + sheetName
+				+ " and row number : " + rowNum);
 		arrayPage.enterPythonCode(sheetName, rowNum);
 	}
 
 	@Then("The user should be presented with error message")
 	public void the_user_should_be_presented_with_error_message() {
 		String actualMsg = arrayPage.getErrorText();
-		Loggerload.info("Actual Error message is  :" + actualMsg);
+		Loggerload.info("Actual Error message is  : " + actualMsg);
+		assertEquals(actualMsg,"NameError: name 'hello' is not defined on line 1", "Result do not match");
 	}
 
 	// @TS_array_07
@@ -164,7 +168,7 @@ public class Array_SD {
 	// @TS_array_21
 	@Given("The user is on {string} page of {string} after logged in")
 	public void the_user_is_on_page_of_after_logged_in(String pname, String pname2) {
-		Loggerload.info("The user is on "+pname+"page of "+pname2+" after logged in");
+		Loggerload.info("The user is on " + pname + "page of " + pname2 + " after logged in");
 		String page_name = pname + pname2.replaceAll("\\s+", "");
 		arrayPage.navigateTo(page_name);
 	}
@@ -172,7 +176,8 @@ public class Array_SD {
 	@When("The user enter valid python code in tryEditor from sheet {string} and {int} for the question")
 	public void the_user_enter_valid_python_code_in_try_editor_from_sheet_and_for_the_question(String sheetName,
 			Integer rowNum) throws InvalidFormatException, IOException {
-		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" +sheetName+ " and row number :" + rowNum);
+		Loggerload.info("The user enter valid python code in tryEditor from sheetname :" + sheetName
+				+ " and row number :" + rowNum);
 		arrayPage.enterPythonCodePractice(sheetName, rowNum);
 		expectedMsg = arrayPage.getExpectedResult(sheetName, rowNum);
 	}
@@ -191,10 +196,10 @@ public class Array_SD {
 
 	// @TS_array_23
 	// @TS_array_24
-	
+
 	@When("The user clicks the Max Consecutive Ones link")
 	public void the_user_clicks_the_max_consecutive_ones_link() {
-		
+
 		arrayPage.maxConsOnes();
 	}
 
@@ -202,7 +207,7 @@ public class Array_SD {
 	// @TS_array_26
 	// @TS_array_27
 	// @TS_array_28
-	
+
 	@When("The user clicks the Find Numbers with Even Number of Digits link")
 	public void the_user_clicks_the_find_numbers_with_even_number_of_digits_link() {
 		arrayPage.findNumbers();
@@ -212,14 +217,19 @@ public class Array_SD {
 	// @TS_array_30
 	// @TS_array_31
 	// @TS_array_32
-	
+
 	@When("The user clicks the Squares of a Sorted Array link")
 	public void the_user_clicks_the_squares_of_a_sorted_array_link() {
 		arrayPage.squaresSortedArray();
 	}
-	
+
 	// @TS_array_33
 	// @TS_array_34
 	// @TS_array_35
-
+	@Then("The user should be presented with error message as {string}")
+	public void the_user_should_be_presented_with_error_message_as(String expectedmsg) {
+		String actualMsg = arrayPage.getErrorText();
+		Loggerload.info("Actual Error message is  : " + actualMsg);
+		assertEquals(actualMsg, expectedmsg, "Result do not match");
+	}
 }

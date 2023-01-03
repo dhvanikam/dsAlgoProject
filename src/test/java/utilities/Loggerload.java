@@ -21,4 +21,6 @@ public class Loggerload {
 	public static void debug(String message) {
 		logger.debug(message);
 	}
+	
+
 }

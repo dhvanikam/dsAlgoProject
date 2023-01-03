@@ -18,7 +18,6 @@ public class ArrayPage {
 	ElementsUtils eleUtil = new ElementsUtils();
 	String tryEditorURL=ConfigReader.tryEditorURL();
 	
-	
 	//Homepage
 	@FindBy (xpath="//a[@href='data-structures-introduction']")WebElement getstart_datastructures;
 	@FindBy (xpath="//a[@href='array']")WebElement getstart_array;
@@ -33,12 +32,13 @@ public class ArrayPage {
 	
 	@FindBy (xpath="//a[@href='/array/practice']")WebElement practiceQueLink;
 	@FindBy (xpath="//a[@href='/question/1']")WebElement searchArrayLink;
-	@FindBy (xpath="//a[@href='/question/1']")WebElement mostConOnesLink;
-	@FindBy (xpath="//a[@href='/question/1']")WebElement findEvenNumLink;
-	@FindBy (xpath="//a[@href='/question/1']")WebElement sqOfSortedArrayLink;
+	@FindBy (xpath="//a[@href='/question/2']")WebElement mostConOnesLink;
+	@FindBy (xpath="//a[@href='/question/3']")WebElement findEvenNumLink;
+	@FindBy (xpath="//a[@href='/question/4']")WebElement sqOfSortedArrayLink;
 	
 	@FindBy (xpath="//a[@href='/tryEditor']")WebElement TryHereLink;
-	@FindBy (xpath="//textarea[@tabindex='0']")WebElement editorInput;//(//*[@class=\"CodeMirror-scroll\"]//*[@class=\"CodeMirror-lines\"]//pre)[1]
+	@FindBy (xpath="//*[@id='answer_form']")WebElement answerform;
+	@FindBy (xpath="//textarea[@tabindex='0']")WebElement editorInput;
 	@FindBy (xpath="//*[@id='answer_form']/button")WebElement runButton;
 	@FindBy (xpath="//*[@class='button']")WebElement submitButton;
 	@FindBy (id="output")WebElement output; 
@@ -85,6 +85,7 @@ public class ArrayPage {
 	}
 
 	public void enterPythonCodePractice(String sheetname, int rownumber) throws InvalidFormatException, IOException {
+		eleUtil.waitForElement(answerform);
 		String code = eleUtil.getCodefromExcel(sheetname, rownumber);
 		eleUtil.enterCodePractice(code, editorInput);
 
@@ -150,7 +151,7 @@ public class ArrayPage {
 	}
 
 	public void navigateTotryEditor() {
-		
+
 		driver.get(tryEditorURL);
 
 	}
@@ -176,6 +177,5 @@ public class ArrayPage {
 		Loggerload.info("The user clicks the Squares of a Sorted Array link");
 		sqOfSortedArrayLink.click();
 	}
-	
 
 }

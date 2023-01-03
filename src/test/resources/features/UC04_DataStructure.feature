@@ -1,9 +1,9 @@
 @data_structure
-Feature: User launch dsalgo application and test Array page
+Feature: User launch dsalgo application and test Data Structure introduction page
 
-  Scenario: The user is logged in
+  Background: The user is logged in
     Given The user is on Signin page of DS Algo portal
-    When The user eneter valid "Numpysdet84" and "sdet84batch"
+    When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
     Then The user redirected to homepage
 

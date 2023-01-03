@@ -1,9 +1,9 @@
 @array
 Feature: User launch dsalgo application and test Array page
 
-  Scenario: The user is logged in
+  Background: The user is logged in
     Given The user is on Signin page of DS Algo portal
-    When The user eneter valid "Numpysdet84" and "sdet84batch"
+    When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
     Then The user redirected to homepage
 
@@ -41,7 +41,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "NameError: name 'hello' is not defined on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -75,7 +75,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "NameError: name 'hello' is not defined on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -109,7 +109,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "NameError: name 'hello' is not defined on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -143,7 +143,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "NameError: name 'hello' is not defined on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -188,7 +188,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is on "Question" page of "Search the array" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "SyntaxError: bad input on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -227,7 +227,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is on "Question" page of "Max Consecutive Ones" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "SyntaxError: bad input on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -266,7 +266,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is on "Question" page of "Find Numbers with Even Number of Digits" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "SyntaxError: bad input on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |
@@ -305,7 +305,7 @@ Feature: User launch dsalgo application and test Array page
     Given The user is on "Question" page of "Squares of a Sorted Array" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
-    Then The user should be presented with error message
+    Then The user should be presented with error message as "SyntaxError: bad input on line 1"
 
     Examples: 
       | Sheetname  | RowNumber |

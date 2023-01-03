@@ -1,13 +1,13 @@
 @signin
 Feature: Validating Login page
 
-@TS_signin_02
- Scenario: Verifying Register link
+  @TS_signin_01
+  Scenario: Verifying Register link
     Given The user is on signin page
     When The user clicks on register link on signin page
     Then The user redirected to Registration page from signin page
- 
- @TS_signin_04   
+
+  @TS_signin_02
   Scenario Outline: User on login page and login with invalid inputs
     Given The user is on signin page
     When The user enter invalid "<username>" and "<password>"
@@ -19,7 +19,7 @@ Feature: Validating Login page
       |          | passowrd |
       |          |          |
 
-@TS_signin_04
+  @TS_signin_03
   Scenario Outline: User on login page and login with invalid and valid inputs from Excel
     Given The user is on signin page
     When The user enter sheet "<Sheetname>" and <RowNumber>
@@ -32,8 +32,7 @@ Feature: Validating Login page
       | Sheet1    |         2 |
       | Sheet1    |         3 |
 
-  
- @TS_signin_05
+  @TS_signin_04
   Scenario: Verifying signout link
     Given The user is on signin page with valid username "Numpysdet84" and password "sdet84batch"
     When The user click signout button

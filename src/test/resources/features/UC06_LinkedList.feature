@@ -1,9 +1,9 @@
+@linkedlist
 Feature: Testing LinkedList page
-  I want to use this template for my feature file
 
-  Scenario: The user is logged in
+  Background: The user is logged in
     Given The user is on Signin page of DS Algo portal
-    When The user eneter valid "Numpysdet84" and "sdet84batch"
+    When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
     Then The user redirected to homepage
 
@@ -255,5 +255,5 @@ Feature: Testing LinkedList page
   Scenario: The user validating "Practice Questions" page
     Given The user is on the "Linked List page" after logged in
     When The user clicks Introduction link
-    When The user clicks on the Practice Questions
+    And The user clicks on the Practice Questions
     Then The user should be directed to Practice Questions of Linked List Page

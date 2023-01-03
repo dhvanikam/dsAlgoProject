@@ -53,6 +53,7 @@ public class Queue_SD {
 	public void the_user_should_be_directed_to_implementation_of_queue_in_python_page() {
 		String Title = queuePage.getQueuePageTitle();
 		Loggerload.info("Title of current page is :" + Title);
+		assertEquals(Title, "Implementation of Queue in Python", "Title not matched");
 	}
 
 	// @TS_queue_04
@@ -86,7 +87,6 @@ public class Queue_SD {
 			throws InvalidFormatException, IOException {
 		queuePage.enterPythonCode(sheetName, rowNum);
 		expectedMsg = queuePage.getExpectedResult(sheetName, rowNum);
-
 	}
 
 	@When("clicks run button")
@@ -117,6 +117,7 @@ public class Queue_SD {
 		Loggerload.info("Invalid code is taken from excel and clicked on run button");
 		String actualMsg = queuePage.getErrorText();
 		Loggerload.info("Error message for invalid python code is -" + actualMsg);
+		assertEquals(actualMsg,"NameError: name 'hello' is not defined on line 1", "Result do not match");
 
 	}
 
@@ -137,7 +138,9 @@ public class Queue_SD {
 	@Then("The user should be redirected to Implementation using collections deque page")
 	public void the_user_should_be_redirected_to_implementation_using_collections_deque_page() {
 		String Title = queuePage.getQueuePageTitle();
-		Loggerload.info("User is in " + Title + " page");
+		Loggerload.info("Title of current page is " + Title);
+		assertEquals(Title, "Implementation using collections.deque", "Title not matched");
+		
 	}
 
 	// @TS_queue_08
@@ -157,15 +160,16 @@ public class Queue_SD {
 	@Then("The user should be redirected to Implementation using array page")
 	public void the_user_should_be_redirected_to_implementation_using_array_page() {
 		String Title = queuePage.getQueuePageTitle();
-		Loggerload.info("User is in " + Title + " page");
+		Loggerload.info("User is in " + Title);
+		assertEquals(Title, "Implementation using array", "Title not matched");
 	}
 
 	// @TS_queue_12
 	@Given("The user in implementation using array page")
 	public void the_user_in_implementation_using_array_page() {
-
+        queuePage.navigateToImpUsingArrayUrl();
 		String Title = queuePage.getQueuePageTitle();
-		Loggerload.info("User is in " + Title + " page");
+		Loggerload.info("User is in " + Title);
 	}
 
 	// @TS_queue_15
@@ -177,7 +181,8 @@ public class Queue_SD {
 	@Then("The user should be redirected to Queue Operations page")
 	public void the_user_should_be_redirected_to_queue_operations_page() {
 		String Title = queuePage.getQueuePageTitle();
-		Loggerload.info("User is in " + Title + " page");
+		Loggerload.info("User is in " + Title );
+		assertEquals(Title, "Queue Operations", "Title not matched");
 	}
 
 	// @TS_queue_16
@@ -203,7 +208,8 @@ public class Queue_SD {
 	@Then("The user is directed to Practice page")
 	public void the_user_is_directed_to_practice_page() {
 		String Title = queuePage.getQueuePageTitle();
-		Loggerload.info("User is in " + Title + " page");
+		Loggerload.info("User is in " + Title );
+		assertEquals(Title, "Practice Questions", "Title not matched");
 	}
 
 }
