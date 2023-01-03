@@ -1,9 +1,9 @@
-@Queue
+@queue
 Feature: User to sign in the dsalgo application and test Queue page
 
-  Scenario: The user is logged in
+  Background: The user is logged in
     Given The user is on Signin page of DS Algo portal
-    When The user eneter valid "Numpysdet84" and "sdet84batch"
+    When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
     Then The user redirected to homepage
 
@@ -28,7 +28,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_05
   Scenario Outline: The user is able run code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -39,7 +39,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_06
   Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -62,7 +62,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_09
   Scenario Outline: The user is able run code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -71,9 +71,9 @@ Feature: User to sign in the dsalgo application and test Queue page
       | pythonCode |         0 |
 
   @TS_queue_10
-  Scenario Outline: The user is presented with error message for invalid code in Editor 
+  Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -96,7 +96,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_13
   Scenario Outline: The user is able to run code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -107,7 +107,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_14
   Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 
@@ -130,7 +130,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_17
   Scenario Outline: The user is able to run code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user is presented with the result after run button is clicked
 
@@ -141,7 +141,7 @@ Feature: User to sign in the dsalgo application and test Queue page
   @TS_queue_18
   Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
-    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber> 
+    When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
 

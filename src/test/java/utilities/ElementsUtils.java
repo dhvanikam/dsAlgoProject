@@ -50,21 +50,16 @@ public class ElementsUtils {
 				element.sendKeys(Keys.RETURN);
 			}
 		}
-		// element.sendKeys(code);
-//		element.sendKeys(str1[0]);
-//		element.sendKeys(Keys.ENTER);
-//		element.sendKeys(str1[1]);
-//		element.sendKeys(Keys.ENTER);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(str1[2]);
-//		element.sendKeys(Keys.ENTER);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(Keys.BACK_SPACE);
-//		element.sendKeys(str1[3]);
-		// Loggerload.info("enterCodePractice is " + code);
+		/*
+		 * element.sendKeys(code); element.sendKeys(str1[0]);
+		 * element.sendKeys(Keys.ENTER); element.sendKeys(str1[1]);
+		 * element.sendKeys(Keys.ENTER); element.sendKeys(Keys.BACK_SPACE);
+		 * element.sendKeys(Keys.BACK_SPACE); element.sendKeys(str1[2]);
+		 * element.sendKeys(Keys.ENTER); element.sendKeys(Keys.BACK_SPACE);
+		 * element.sendKeys(Keys.BACK_SPACE); element.sendKeys(Keys.BACK_SPACE);
+		 * element.sendKeys(Keys.BACK_SPACE); element.sendKeys(str1[3]);
+		 * Loggerload.info("enterCodePractice is " + code);
+		 */
 
 	}
 

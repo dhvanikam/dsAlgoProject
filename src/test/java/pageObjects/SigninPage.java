@@ -1,7 +1,5 @@
 package pageObjects;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,20 +7,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import driverFactory.DriverFactory;
 import utilities.ConfigReader;
-import utilities.Loggerload;
 
 public class SigninPage {
 
 	public  static WebDriver driver=DriverFactory.getdriver();;
 	String loginURL=ConfigReader.getLoginPage();
+	boolean isRequired;
 	
 	@FindBy (xpath="//*[@id='id_username']")static WebElement user;
 	@FindBy (xpath="//*[@id='id_password']")static WebElement pwd;
 	@FindBy (xpath="//*[@value='Login']")WebElement login_button;
 	@FindBy (xpath="//div[@class='alert alert-primary']")WebElement alert;
 	@FindBy (xpath="//a[@href='/register']")WebElement register;
+	@FindBy (xpath="//a[@href='/logout']")WebElement signout;
 	
-	// Page Elements
 	public SigninPage() {
 
 		PageFactory.initElements(driver, this);
@@ -34,7 +32,7 @@ public class SigninPage {
 
 	}
 
-	public void doLogin(String username, String password) {
+	public Boolean doLogin(String username, String password) {
 
 		user.clear();
 		user.sendKeys(username);
@@ -44,24 +42,15 @@ public class SigninPage {
 		// To check empty fields , we need to check "required" field is on an attribute
 		if (username.isBlank()) {
 			JavascriptExecutor js_user = (JavascriptExecutor) driver;
-			boolean isRequired = (Boolean) js_user.executeScript("return arguments[0].required;", user);
-			if (isRequired) // if required is true for username
-			{
-
-				Loggerload.info("Usernmae Field is Empty - required attribute is validated");
-
-			}
+			isRequired = (Boolean) js_user.executeScript("return arguments[0].required;", user);
+			return isRequired;
 		} else if (password.isBlank()) {
 			JavascriptExecutor js_password = (JavascriptExecutor) driver;
-			boolean isRequired = (Boolean) js_password.executeScript("return arguments[0].required;", pwd);
-			if (isRequired)// if required is true for password
-			{
+			isRequired = (Boolean) js_password.executeScript("return arguments[0].required;", pwd);
+			return isRequired;
 
-				Loggerload.info("Password Field is Empty - required attribute is validated");
-
-			}
 		}
-
+		return isRequired;
 	}
 
 	// input fields empty -click login
@@ -88,6 +77,10 @@ public class SigninPage {
 
 		String Title = driver.getTitle();
 		return Title;
+	}
+
+	public void signout() {
+		signout.click();
 	}
 
 }

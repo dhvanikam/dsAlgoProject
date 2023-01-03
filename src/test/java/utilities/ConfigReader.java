@@ -30,7 +30,6 @@ public class ConfigReader {
 	public static String getBrowserType() {
 		String browser = properties.getProperty("browser");
 		Loggerload.info("Get property BrowserType");
-		System.out.println(browser);
 		if (browser != null)
 			return browser;
 		else
@@ -87,6 +86,15 @@ public class ConfigReader {
 			throw new RuntimeException(pagename + " url not specified in the Configuration.properties file.");
 	}
 
+	// Linked list
+	public static String getLinkedListUrl() {
+		String linkedlisturl = properties.getProperty("linkedlisturl");
+		if (linkedlisturl != null)
+			return linkedlisturl;
+		else
+			throw new RuntimeException("linked list url not specified in the Configuration.properties file.");
+	}
+
 	// Stack
 	public static String getStackUrl() {
 		String stackurl = properties.getProperty("stackurl");
@@ -96,6 +104,13 @@ public class ConfigReader {
 			throw new RuntimeException("stack url not specified in the Configuration.properties file.");
 	}
 
+	public static String tryURL(String pagename) {
+		String url = properties.getProperty(pagename);
+		if (url != null)
+			return url;
+		else
+			throw new RuntimeException(pagename + "url not specified in the Configuration.properties file.");
+	}
 	// Queue
 	public static String getQueueUrl() {
 		String queueurl = properties.getProperty("queueurl");
@@ -140,12 +155,13 @@ public class ConfigReader {
 					"Implementation using collections deque url is not specified in the Configuration.properties file.");
 	}
 
-	public static String tryURL(String pagename) {
-		String url = properties.getProperty(pagename);
-		if (url != null)
-			return url;
+	public static String getImpUsingArrayUrl() {
+		String impusingarray = properties.getProperty("impusingarrayurl");
+		if (impusingarray != null)
+			return impusingarray;
 		else
-			throw new RuntimeException(pagename + "url not specified in the Configuration.properties file.");
+			throw new RuntimeException(
+					"Implementation using array url is not specified in the Configuration.properties file.");
 	}
 
 	// Register
@@ -182,5 +198,16 @@ public class ConfigReader {
 			throw new RuntimeException(
 					"graphrepresentations url is not specified in the Configuration.properties file.");
 	}
+
+	// Tree
+	public static String getTreeUrl() {
+		String treeurl = properties.getProperty("treeurl");
+		if (treeurl != null)
+			return treeurl;
+		else
+			throw new RuntimeException("tree url not specified in the Configuration.properties file.");
+	}
+
+	
 
 }

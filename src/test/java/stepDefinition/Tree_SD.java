@@ -5,12 +5,10 @@ import static org.testng.Assert.assertEquals;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.formula.SheetNameFormatter;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.StackPage;
 import pageObjects.TreePage;
 import utilities.ConfigReader;
 import utilities.Loggerload;
@@ -19,8 +17,8 @@ public class Tree_SD {
 	TreePage treepage = new TreePage();
 	String Excelpath = ConfigReader.getexcelfilepath();
 	String expectedMsg;
-	
-// @TS_tree_02
+
+	// @TS_tree_02
 	@When("The user selects Tree item from the drop down menu")
 	public void the_user_selects_tree_item_from_the_drop_down_menu() {
 		Loggerload.info("User click on Data Structure dropdown ");
@@ -36,7 +34,7 @@ public class Tree_SD {
 		assertEquals(Title, pagename, "Title do not match");
 	}
 
-// @TS_tree_03
+	// @TS_tree_03
 	@When("The user clicks on the Overview of Trees link")
 	public void the_user_clicks_on_the_overview_of_trees_link() {
 		treepage.clickOnoverviewOfTreesPage();
@@ -115,93 +113,94 @@ public class Tree_SD {
 	public void the_user_should_get_the_error_message_for_trees() {
 		String actualMsg = treepage.getErrormsg();
 		Loggerload.info("Actual result  :" + actualMsg);
+		assertEquals(actualMsg,"NameError: name 'hello' is not defined on line 1", "Result do not match");
 	}
 
-// @TS_tree_07
+	// @TS_tree_07
 	@When("The user clicks on the Terminologies button")
 	public void the_user_clicks_on_the_terminologies_button() {
 		treepage.clickOnTerminologiesLink();
 	}
 
-//@TS_tree_08, @TS_tree_09, @TS_tree_10
-//@TS_tree_11
+	// @TS_tree_08, @TS_tree_09, @TS_tree_10
+	// @TS_tree_11
 	@When("The user clicks on the Types of Trees button")
 	public void the_user_clicks_on_the_types_of_trees_button() {
 		treepage.clickOnTypesOfTreesPage();
 	}
 
-//@TS_tree_12, @TS_tree_13, @TS_tree_14
-//@TS_tree_15
+	// @TS_tree_12, @TS_tree_13, @TS_tree_14
+	// @TS_tree_15
 	@When("The user clicks on the Tree Traversals button")
 	public void the_user_clicks_on_the_tree_traversals_button() {
 		treepage.clickOnTreeTraversalsLink();
 	}
-//@TS_tree_16, @TS_tree_17, @TS_tree_18
-//@TS_tree_19
+	// @TS_tree_16, @TS_tree_17, @TS_tree_18
+	// @TS_tree_19
 
 	@When("The user clicks on the Traversal illustration button")
 	public void the_user_clicks_on_the_traversal_illustration_button() {
 		treepage.clickOnTrav_illus_Link();
 	}
 
-//@TS_tree_20, @TS_tree_21, @TS_tree_22	
-//@TS_tree_23
+	// @TS_tree_20, @TS_tree_21, @TS_tree_22
+	// @TS_tree_23
 	@When("The user clicks on the binary trees button")
 	public void the_user_clicks_on_the_binary_trees_button() {
 		treepage.clickOnBinaryTreesLink();
 	}
 
-//@TS_tree_24, @TS_tree_25, @TS_tree_26	
-// @TS_tree_27
+	// @TS_tree_24, @TS_tree_25, @TS_tree_26
+	// @TS_tree_27
 	@When("The user clicks on the types of binary trees button")
 	public void the_user_clicks_on_the_types_of_binary_trees_button() {
 		treepage.clickOnTypesOfBTLink();
 	}
 
-//@TS_tree_28, @TS_tree_29, @TS_tree_30
-//@TS_tree_31	
+	// @TS_tree_28, @TS_tree_29, @TS_tree_30
+	// @TS_tree_31
 	@When("The user clicks on the Implementation in Python button")
 	public void the_user_clicks_on_the_implementation_in_python_button() {
 		treepage.click_implementationinPython();
 	}
 
-//@TS_tree_32, @TS_tree_33, @TS_tree_34
-//@TS_tree_35	
+	// @TS_tree_32, @TS_tree_33, @TS_tree_34
+	// @TS_tree_35
 	@When("The user clicks on the binary tree traversals button")
 	public void the_user_clicks_on_the_binary_tree_traversals_button() {
 		treepage.click_binaryTreeTraversals();
 	}
 
-//@TS_tree_36, @TS_tree_37, @TS_tree_38
+	// @TS_tree_36, @TS_tree_37, @TS_tree_38
 	// @TS_tree_39
 	@When("The user clicks on the Implementation of Binary Trees button")
 	public void the_user_clicks_on_the_implementation_of_binary_trees_button() {
 		treepage.click_implementationOfBinaryTrees();
 	}
 
-//@TS_tree_40, @TS_tree_41, @TS_tree_42
+	// @TS_tree_40, @TS_tree_41, @TS_tree_42
 	// @TS_tree_43
 	@When("The user clicks on the Applications of Binary Trees button")
 	public void the_user_clicks_on_the_Applications_of_binary_trees_button() {
 		treepage.click_applicationsOfBinaryTrees();
 	}
 
-//@TS_tree_44, @TS_tree_45, @TS_tree_46
+	// @TS_tree_44, @TS_tree_45, @TS_tree_46
 	// @TS_tree_47
 	@When("The user clicks on the Binary Search Trees button")
 	public void the_user_clicks_on_the_binary_search_trees_button() {
 		treepage.click_binarySearchTrees();
 	}
 
-//@TS_tree_48, @TS_tree_49, @TS_tree_50
-//@TS_tree_51
+	// @TS_tree_48, @TS_tree_49, @TS_tree_50
+	// @TS_tree_51
 	@When("The user clicks on the Implementation of BST button")
 	public void the_user_clicks_on_the_implementation_of_bst_button() {
 		treepage.click_implementationOfBST();
 	}
 
-//@TS_tree_52, @TS_tree_53, @TS_tree_54
-//@TS_tree_55
+	// @TS_tree_52, @TS_tree_53, @TS_tree_54
+	// @TS_tree_55
 	@When("The user clicks on the Practice Questions in Overview of Trees")
 	public void the_user_clicks_on_the_practice_questions_in_overview_of_trees() {
 		treepage.click_practiceQuestion();
