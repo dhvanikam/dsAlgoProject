@@ -18,8 +18,7 @@ import utilities.Loggerload;
 public class RegisterPage {
 	public static WebDriver driver=DriverFactory.getdriver();
 	String registerPageURL=ConfigReader.registerPageURL();
-	
-	
+		
 	@FindBy (xpath="//form/input[@type='submit']")WebElement registerButton;
 	@FindBy (xpath="//*[@id='id_username']") WebElement user;
 	@FindBy (xpath="//*[@id='id_password1']") WebElement pwd;

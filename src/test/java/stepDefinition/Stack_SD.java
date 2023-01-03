@@ -33,8 +33,8 @@ public class Stack_SD {
 		assertEquals(Title, "Stack", "Title do not match");
 	}
 
-// @TS_stack_03
-	
+	// @TS_stack_03
+
 	@When("The user clicks on the Operations in Stack link")
 	public void the_user_clicks_on_the_operations_in_stack_link() {
 		stackpage.clickOnOperationsInstackpage();
@@ -42,18 +42,18 @@ public class Stack_SD {
 
 	@Then("The user should then be directed to {string} Page")
 	public void the_user_should_then_be_directed_to_page(String string) {
-		
-	Loggerload.info("User redirected to Stack DataStructure Page ");
-	String Title = stackpage.getStackPageTitle();
-	Loggerload.info("Title of current page is :" + Title);
-	assertEquals(Title, "Operations in Stack", "Title do not match");
-}
 
-// @TS_stack_04	
-	
+		Loggerload.info("User redirected to Stack DataStructure Page ");
+		String Title = stackpage.getStackPageTitle();
+		Loggerload.info("Title of current page is :" + Title);
+		assertEquals(Title, "Operations in Stack", "Title do not match");
+	}
+
+	// @TS_stack_04	
+
 	@When("The user clicks {string} button in {string} page")
 	public void the_user_clicks_button_in_page(String btnname, String dstname) {
-	   stackpage.clickTryHereLink(btnname, dstname);
+		stackpage.clickTryHereLink(btnname, dstname);
 	}
 
 	@Then("The user should be redirected to operationsinstack page having an tryEditor with a Run button to test")
@@ -63,8 +63,8 @@ public class Stack_SD {
 		Loggerload.info("Title of current page is :" + Title);
 		assertEquals(Title, "Assessment", "Title do not match");
 	}
-	
-// @TS_stack_05
+
+	// @TS_stack_05
 	@Given("The user is in stack page having an tryEditor with a Run button to test")
 	public void the_user_is_in_stack_page_having_an_try_editor_with_a_run_button_to_test() {
 		stackpage.navigateTotryEditor();
@@ -73,11 +73,12 @@ public class Stack_SD {
 	}
 
 	@When("The user gets input from sheet {string} and {int}")
-	public void the_user_gets_input_from_sheet_and(String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
+	public void the_user_gets_input_from_sheet_and(String sheetName, Integer rowNum)
+			throws InvalidFormatException, IOException {
 		stackpage.enterStackPythoncode(sheetName, rowNum);
 		expectedMsg = stackpage.getExpectedResult(sheetName, rowNum);
 	}
-	
+
 	@When("The user clicks on Run button after Entering valid python code in stack tryEditor")
 	public void the_user_clicks_on_run_button_after_entering_valid_python_code_in_stack_try_editor() {
 		stackpage.clickOnRun();
@@ -90,30 +91,31 @@ public class Stack_SD {
 		Loggerload.info("Actual result  :" + actualMsg);
 		assertEquals(actualMsg, expectedMsg);
 	}
-	
-// @TS_stack_06	
+
+	// @TS_stack_06	
 	@When("The user gets invalid input from sheet {string} and {int}")
-	public void the_user_gets_invalid_input_from_sheet_and(String sheetName, Integer rowNum) throws InvalidFormatException, IOException {
-	    stackpage.enterStackPythoncode(sheetName, rowNum);
+	public void the_user_gets_invalid_input_from_sheet_and(String sheetName, Integer rowNum)
+			throws InvalidFormatException, IOException {
+		stackpage.enterStackPythoncode(sheetName, rowNum);
 	}
-	
+
 	@When("The user clicks on Run button after Entering invalid python code in stack tryEditor")
 	public void the_user_clicks_on_run_button_after_entering_invalid_python_code_in_stack_try_editor() {
-	    stackpage.clickOnRun();
+		stackpage.clickOnRun();
 	}
 
 	@Then("The user should get the error message")
 	public void the_user_should_get_the_error_message() {
-     String actualMsg = stackpage.getErrormsg();
-     Loggerload.info("Actual result  :" + actualMsg);
-
+		String actualMsg = stackpage.getErrormsg();
+		Loggerload.info("Actual result  :" + actualMsg);
+		assertEquals(actualMsg,"NameError: name 'hello' is not defined on line 1", "Result do not match");
 	}
-	
-// @TS_stack_07
+
+	// @TS_stack_07
 
 	@When("The user clicks on the Implementation button")
 	public void the_user_clicks_on_the_implementation_button() {
-	    stackpage.clickOnimplementationlink();
+		stackpage.clickOnimplementationlink();
 	}
 
 	@Then("The user should be directed to Implementation Page")
@@ -124,16 +126,16 @@ public class Stack_SD {
 		assertEquals(Title, "Implementation", "Title do not match");
 	}
 
-// @TS_stack_08
-// @TS_stack_09
-// @TS_stack_10
-// @TS_stack_11
+	// @TS_stack_08
+	// @TS_stack_09
+	// @TS_stack_10
+	// @TS_stack_11
 
 	@When("The user clicks on the Applications button")
 	public void the_user_clicks_on_the_applications_button() {
 		stackpage.clickOnapplicationslink();
 		Loggerload.info("User redirected to Stack Applications Page ");
-}
+	}
 
 	@Then("The user should be directed to Applications Page")
 	public void the_user_should_be_directed_to_applications_page() {
@@ -141,14 +143,14 @@ public class Stack_SD {
 		Loggerload.info("Title of current page is :" + Title);
 		assertEquals(Title, "Applications", "Title do not match");
 	}
-	
-// @TS_stack_12
-// @TS_stack_13	
-// @TS_stack_14	
-// @TS_stack_15
+
+	// @TS_stack_12
+	// @TS_stack_13	
+	// @TS_stack_14	
+	// @TS_stack_15
 
 	@When("The user clicks on the Practice Questions button")
-	public void the_user_clicks_on_the_practice_questions_button() {	
+	public void the_user_clicks_on_the_practice_questions_button() {
 		stackpage.clickOnapplicationslink();
 		stackpage.clickOnPracticeQuestionspage();
 		Loggerload.info("User redirected to Practice Questions  Page ");
@@ -163,4 +165,3 @@ public class Stack_SD {
 	}
 
 }
-	

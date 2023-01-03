@@ -23,9 +23,9 @@ public class QueuePage {
 	String impofqpythonurl = ConfigReader.getImpOfQPythonUrl();
 	String editorurl = ConfigReader.getEditorUrl();
 	String impcolldqurl = ConfigReader.getImpCollDQUrl();
-
+    String impusingarray=ConfigReader.getImpUsingArrayUrl();
+    
 	// homepage
-
 	@FindBy(xpath = "//*//a[contains(text(), 'Data Structures')]")WebElement dropdown;
 	@FindBy(xpath = "//a[normalize-space()='Queue']")WebElement dropdown_queue;
 
@@ -95,6 +95,12 @@ public class QueuePage {
 		ImplementationQueuePythonLink.click();
 		Loggerload.info("User clicked on Implementation of Queue Python Link ");
 	}
+	
+	public void navigateToImpUsingArrayUrl() {
+		driver.get(impusingarray);
+	}
+	
+	
 
 	public void clickOnTryHereLink() {
 		TryHereLink.click();

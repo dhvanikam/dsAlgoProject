@@ -1,9 +1,9 @@
 @graph
 Feature: User launch dsalgo application and test Graph page
 
-  Scenario: The user is logged in
+  Background: The user is logged in
     Given The user is on Signin page of DS Algo portal
-    When The user eneter valid "Numpysdet84" and "sdet84batch"
+    When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
     Then The user redirected to homepage
 
@@ -69,25 +69,20 @@ Feature: User launch dsalgo application and test Graph page
     Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         0 |
-      
+
   @TS_graph_10
   Scenario Outline: The user is presented with error message for invalid code in Editor
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
     Then The user gets an error message
-    
+
     Examples: 
       | Sheetname  | RowNumber |
       | pythonCode |         1 |
-      
-      
+
   @TS_graph_11
   Scenario: The user is able to navigate to graph representations page and click on Practice Questions
     Given The user is in Editor page and navigates to graph representations page
     When the user clicks on Practice Questions in graph representations page
-    Then The user is directed to graph Practice page  
-      
-      
-    
-  
+    Then The user is directed to graph Practice page

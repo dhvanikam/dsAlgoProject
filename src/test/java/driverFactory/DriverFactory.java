@@ -15,8 +15,6 @@ import utilities.Loggerload;
 public class DriverFactory {
 
 	public static WebDriver driver;
-	private Scenario scenario;
-	//public static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
 
 	public WebDriver initializeDrivers(String browser) {
 
@@ -24,52 +22,38 @@ public class DriverFactory {
 			Loggerload.info("Testing on firefox");
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("chrome")) {
 			Loggerload.info("Testing on chrome");
 			WebDriverManager.chromedriver().browserVersion("108.0.0").setup();
 			driver = new ChromeDriver();
-			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("safari")) {
 			Loggerload.info("Testing on safari");
 			WebDriverManager.safaridriver().setup();
 			driver = new SafariDriver();
-			//threadDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("edge")) {
 			Loggerload.info("Testing on Edge");
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
-			//threadDriver.set(driver);
+
 		}
-		//Set Page load timeout
+		// Set Page load timeout
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-		
+
 		driver.manage().window().maximize();
-		
-		return getdriver();
+
+		return driver;
 	}
 
-	public Scenario getScenario()
-    {
-        return scenario;
-    }
-    
-    public void setScenario(Scenario scenario)
-    {
-        this.scenario = scenario;
-    }
-    
-	public static synchronized WebDriver getdriver() {
+	public static WebDriver getdriver() {
 		return driver;
-				//threadDriver.get();
+
 	}
 
 	public void closeallDriver() {
 		driver.close();
-		//getdriver().close();
 	}
 
 }

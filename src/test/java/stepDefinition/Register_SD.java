@@ -25,11 +25,11 @@ public class Register_SD {
 		register.clickOnRegisterButton();
 	}
 
-	@Then("It should display an error {string} below Username textbox")
-	public void it_should_display_an_error_below_username_textbox(String expErrormsg) {
+	@Then("It should display an error message {string} below Username textbox")
+	public void it_should_display_an_error_message_below_username_textbox(String expErrormsg) {
 		Loggerload.info("Error message is displayed " + register.getEmptyfieldErrormsgUser()
 				+ " an error below Username textbox");
-		assertTrue(register.getEmptyRequiredUser(), "Usernmae Field is Empty - required attribute is validated");
+		assertTrue(register.getEmptyRequiredUser(), "Username Field is Empty - required attribute is validated");
 		assertEquals(register.getEmptyfieldErrormsgUser(), expErrormsg);
 	}
 
@@ -42,8 +42,8 @@ public class Register_SD {
 		register.entervalidUsername(dataTable);
 	}
 
-	@Then("It should display an error {string} below Password textbox")
-	public void it_should_display_an_error_below_password_textbox(String expErrormsg) {
+	@Then("It should display an error message {string} below Password textbox")
+	public void it_should_display_an_error_message_below_password_textbox(String expErrormsg) {
 		Loggerload.info("Error message is displayed " + register.getEmptyfieldErrormsgCofmPswd()
 				+ " an error below Password textbox");
 		assertTrue(register.getEmptyRequiredPswd(), "Username Field is Empty - required attribute is validated");
@@ -60,8 +60,8 @@ public class Register_SD {
 		register.clickOnRegisterButton();
 	}
 
-	@Then("It should display an error {string} below Password Confirmation textbox")
-	public void it_should_display_an_error_below_password_confirmation_textbox(String expErrormsg) {
+	@Then("It should display an error message {string} below Password Confirmation textbox")
+	public void it_should_display_an_error_message_below_password_confirmation_textbox(String expErrormsg) {
 		Loggerload.info("Error message is displayed " + register.getEmptyfieldErrormsgCofmPswd()
 				+ " an error below Username textbox");
 		assertTrue(register.getEmptyRequiredCofmPswd(), "Username Field is Empty - required attribute is validated");
