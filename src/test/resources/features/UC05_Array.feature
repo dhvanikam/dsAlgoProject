@@ -1,7 +1,7 @@
 @array
 Feature: User launch dsalgo application and test Array page
 
-  Background: The user is logged in
+  Background: The user is logged in to DS Algo portal
     Given The user is on Signin page of DS Algo portal
     When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
@@ -88,7 +88,7 @@ Feature: User launch dsalgo application and test Array page
     Then The user should be redirected to "Basic Operations in Lists" page
 
   @TS_array_12
-  Scenario: The user is able to navigate to a page having an tryEditor from Basic Operations in Lists page
+  Scenario: The user is able to navigate to a page having an tryEditor f Basic Operations in Lists page
     Given The user is on the "Basic Operations in Lists" after logged in
     When The user clicks "Try Here" button on "Basic Operations in Lists" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
