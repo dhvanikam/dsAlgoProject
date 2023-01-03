@@ -1,7 +1,7 @@
 @array
 Feature: User launch dsalgo application and test Array page
 
-  Background: The user is logged in
+  Background: The user is logged in to DS Algo portal
     Given The user is on Signin page of DS Algo portal
     When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
@@ -20,13 +20,13 @@ Feature: User launch dsalgo application and test Array page
     Then The user should be redirected to "Arrays in Python" page
 
   @TS_array_04
-  Scenario: The user is able to navigate to a page having an tryEditor
+  Scenario: The user is able to navigate to a page having an tryEditor from Arrays in Python page
     Given The user is on the "Arrays in Python page" after logged in
     When The user clicks "Try Here" button on "Arrays in Python" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_array_05
-  Scenario Outline: The user is able run code in tryEditor
+  Scenario Outline: The user is able run code in tryEditor for Arrays in Python page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter valid python code in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -37,7 +37,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         0 |
 
   @TS_array_06
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Arrays in Python page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -54,13 +54,13 @@ Feature: User launch dsalgo application and test Array page
     Then The user should be redirected to "Arrays Using List" page
 
   @TS_array_08
-  Scenario: The user is able to navigate to a page having an tryEditor
+  Scenario: The user is able to navigate to a page having an tryEditor for Arrays Using List page
     Given The user is on the "Arrays Using List" after logged in
     When The user clicks "Try Here" button on "Arrays Using List" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_array_09
-  Scenario Outline: The user is able run code in tryEditor
+  Scenario Outline: The user is able run code in tryEditor for Arrays Using List page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter valid python code in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -71,7 +71,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         0 |
 
   @TS_array_10
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Arrays Using List page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -88,13 +88,13 @@ Feature: User launch dsalgo application and test Array page
     Then The user should be redirected to "Basic Operations in Lists" page
 
   @TS_array_12
-  Scenario: The user is able to navigate to a page having an tryEditor
+  Scenario: The user is able to navigate to a page having an tryEditor f Basic Operations in Lists page
     Given The user is on the "Basic Operations in Lists" after logged in
     When The user clicks "Try Here" button on "Basic Operations in Lists" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_array_13
-  Scenario Outline: The user is able run code in tryEditor
+  Scenario Outline: The user is able run code in tryEditor for Basic Operations in Lists page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter valid python code in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -105,7 +105,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         0 |
 
   @TS_array_14
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Basic Operations in Lists page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -122,13 +122,13 @@ Feature: User launch dsalgo application and test Array page
     Then The user should be redirected to "Applications of Array" page
 
   @TS_array_16
-  Scenario: The user is able to navigate to a page having an tryEditor
+  Scenario: The user is able to navigate to a page having an tryEditor from Applications of Array page
     Given The user is on the "Applications of Array" after logged in
     When The user clicks "Try Here" button on "Applications of Array" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_array_17
-  Scenario Outline: The user is able run code in tryEditor
+  Scenario Outline: The user is able run code in tryEditor for Applications of Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter valid python code in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -139,7 +139,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         0 |
 
   @TS_array_18
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Applications of Array page
     Given The user is in a page having an tryEditor with a Run button to test
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -184,7 +184,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         3 |
 
   @TS_array_23
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Search the array link
     Given The user is on "Question" page of "Search the array" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -223,7 +223,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         5 |
 
   @TS_array_27
-  Scenario Outline: The user is presented with error message for invalid code in tryEditor
+  Scenario Outline: The user is presented with error message for invalid code in tryEditor for Max Consecutive Ones
     Given The user is on "Question" page of "Max Consecutive Ones" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -262,7 +262,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         7 |
 
   @TS_array_31
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Find Numbers with Even Number of Digits
     Given The user is on "Question" page of "Find Numbers with Even Number of Digits" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button
@@ -301,7 +301,7 @@ Feature: User launch dsalgo application and test Array page
       | pythonCode |         9 |
 
   @TS_array_35
-  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor
+  Scenario Outline: The user is presented with error message for code with invalid syntax in tryEditor for Squares of a Sorted Array
     Given The user is on "Question" page of "Squares of a Sorted Array" after logged in
     When The user enter python code with invalid syntax in tryEditor from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on run button

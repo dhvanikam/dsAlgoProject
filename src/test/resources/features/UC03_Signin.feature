@@ -8,7 +8,7 @@ Feature: Validating Login page
     Then The user redirected to Registration page from signin page
 
   @TS_signin_02
-  Scenario Outline: User on login page and login with invalid inputs
+  Scenario Outline: User on login page and login with invalid inputs "<username>" and "<password>"
     Given The user is on signin page
     When The user enter invalid "<username>" and "<password>"
     Then click login button to verify
@@ -20,7 +20,7 @@ Feature: Validating Login page
       |          |          |
 
   @TS_signin_03
-  Scenario Outline: User on login page and login with invalid and valid inputs from Excel
+  Scenario Outline: User on login page and login with invalid and valid inputs from Excel "<Sheetname>" and <RowNumber>
     Given The user is on signin page
     When The user enter sheet "<Sheetname>" and <RowNumber>
     Then click login button

@@ -8,7 +8,7 @@ Feature: User launch dsalgo application and test Home page
     Then The user should be redirected to homepage
 
   @TS_home_02
-  Scenario Outline: User is on Home page and click getstarted link on  home page without sign in
+  Scenario Outline: User is on Home page and click getstarted link "<option>" on home page without sign in
     Given The user is on Home page
     When The user clicks on Get Started link on homepage "<option>" without login
     Then The user get warning message "You are not logged in"
@@ -24,7 +24,7 @@ Feature: User launch dsalgo application and test Home page
       | Graph          |
 
   @TS_home_03
-  Scenario Outline: User is on Home page and click on dropdown without sign in
+  Scenario Outline: User is on Home page and click on dropdown "<option>" without sign in
     Given The user is on Home page
     When The user clicks on dropdown "<option>"
     Then The user get warning message "You are not logged in"

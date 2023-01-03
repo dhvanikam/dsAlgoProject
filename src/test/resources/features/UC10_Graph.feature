@@ -1,7 +1,7 @@
 @graph
 Feature: User launch dsalgo application and test Graph page
 
-  Background: The user is logged in
+  Background: The user is logged in to DS Algo portal
     Given The user is on Signin page of DS Algo portal
     When The user enter valid "Numpysdet84" and "sdet84batch"
     And The user click on login button
@@ -26,7 +26,7 @@ Feature: User launch dsalgo application and test Graph page
     Then The user should be directed to Editor page with Run button
 
   @TS_graph_05
-  Scenario Outline: The user is able to run code in Editor
+  Scenario Outline: The user is able to run code in Editor for Graph page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -37,7 +37,7 @@ Feature: User launch dsalgo application and test Graph page
       | pythonCode |         0 |
 
   @TS_graph_06
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Graph page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -54,13 +54,13 @@ Feature: User launch dsalgo application and test Graph page
     Then The user should be redirected to Graph Representations page
 
   @TS_graph_08
-  Scenario: The user should be directed to editor page with run button to test python code
+  Scenario: The user should be directed to editor page with run button to test python code from Graph Representations page
     Given The user is in Graph Representations page
     When The user clicks on Tryhere link on graph representations page
     Then The user navigates to Editor page with Run button
 
   @TS_graph_09
-  Scenario Outline: The user is able to run code in Editor
+  Scenario Outline: The user is able to run code in Editor for Graph Representations page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -71,7 +71,7 @@ Feature: User launch dsalgo application and test Graph page
       | pythonCode |         0 |
 
   @TS_graph_10
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Graph Representations page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
