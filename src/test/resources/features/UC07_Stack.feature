@@ -20,13 +20,13 @@ Feature: User tests the stack page on the Ds algo application
     Then The user should then be directed to "Operations in Stack" Page
 
   @TS_stack_04
-  Scenario: The user is able to navigate to a page having an tryEditor
+  Scenario: The user is able to navigate to a page having an tryEditor from Operations in Stack page
     Given The user is on the "Operations in Stack page" after logged in
     When The user clicks "Try Here" button in "stack" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_stack_05
-  Scenario Outline: The user is able to run code in tryEditor
+  Scenario Outline: The user is able to run code in tryEditor for Operations in Stack page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering valid python code in stack tryEditor
@@ -37,7 +37,7 @@ Feature: User tests the stack page on the Ds algo application
       | pythonCode |         0 |
 
   @TS_stack_06
-  Scenario Outline: The user is able to get the error message for invalid syntax
+  Scenario Outline: The user is able to get the error message for invalid syntax for Operations in Stack page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering invalid python code in stack tryEditor
@@ -54,13 +54,13 @@ Feature: User tests the stack page on the Ds algo application
     Then The user should be directed to Implementation Page
 
   @TS_stack_08
-  Scenario: The user is able to navigate to Implementation page having an tryEditor
+  Scenario: The user is able to navigate to Implementation page having an tryEditor 
     Given The user is on the "Stack Implementation page" after logged in
     When The user clicks "Try Here" button in "stack Implementation" page
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_stack_09
-  Scenario Outline: The user is able to run code in tryEditor
+  Scenario Outline: The user is able to run code in tryEditor for stack Implementation page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering valid python code in stack tryEditor
@@ -71,7 +71,7 @@ Feature: User tests the stack page on the Ds algo application
       | pythonCode |         0 |
 
   @TS_stack_10
-  Scenario Outline: The user is able to get the error message for invalid syntax
+  Scenario Outline: The user is able to get the error message for invalid syntax for stack Implementation page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering invalid python code in stack tryEditor
@@ -94,7 +94,7 @@ Feature: User tests the stack page on the Ds algo application
     Then The user should be redirected to a page having an tryEditor with a Run button to test
 
   @TS_stack_13
-  Scenario Outline: The user is able to run code in tryEditor
+  Scenario Outline: The user is able to run code in tryEditor for stack Applications page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering valid python code in stack tryEditor
@@ -105,7 +105,7 @@ Feature: User tests the stack page on the Ds algo application
       | pythonCode |         0 |
 
   @TS_stack_14
-  Scenario Outline: The user is able to get the error messagefor invalid syntax
+  Scenario Outline: The user is able to get the error messagefor invalid syntax for stack Applications page
     Given The user is in stack page having an tryEditor with a Run button to test
     When The user gets invalid input from sheet "<Sheetname>" and <RowNumber>
     And The user clicks on Run button after Entering invalid python code in stack tryEditor

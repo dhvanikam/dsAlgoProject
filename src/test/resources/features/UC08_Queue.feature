@@ -26,7 +26,7 @@ Feature: User to sign in the dsalgo application and test Queue page
     Then The user navigates to Editor page with Run button
 
   @TS_queue_05
-  Scenario Outline: The user is able run code in Editor
+  Scenario Outline: The user is able run code in Editor for Implementation of queue page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -37,7 +37,7 @@ Feature: User to sign in the dsalgo application and test Queue page
       | pythonCode |         0 |
 
   @TS_queue_06
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Implementation of queue page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -54,13 +54,13 @@ Feature: User to sign in the dsalgo application and test Queue page
     Then The user should be redirected to Implementation using collections deque page
 
   @TS_queue_08
-  Scenario: The user should be directed to editor page with run button to test python code
+  Scenario: The user should be directed to editor page with run button to test python code from Implementation using collections page
     Given The user in implementation using collections page
     When The user clicks on Tryhere link
     Then The user navigates to Editor page with Run button
 
   @TS_queue_09
-  Scenario Outline: The user is able run code in Editor
+  Scenario Outline: The user is able run code in Editor for Implementation using collections page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -71,7 +71,7 @@ Feature: User to sign in the dsalgo application and test Queue page
       | pythonCode |         0 |
 
   @TS_queue_10
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Implementation using collections page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -88,13 +88,13 @@ Feature: User to sign in the dsalgo application and test Queue page
     Then The user should be redirected to Implementation using array page
 
   @TS_queue_12
-  Scenario: The user should be directed to editor page with run button to test python code
+  Scenario: The user should be directed to editor page with run button to test python code from Implementation using array page
     Given The user in implementation using array page
     When The user clicks on Tryhere link
     Then The user navigates to Editor page with Run button
 
   @TS_queue_13
-  Scenario Outline: The user is able to run code in Editor
+  Scenario Outline: The user is able to run code in Editor for Implementation using array page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -105,7 +105,7 @@ Feature: User to sign in the dsalgo application and test Queue page
       | pythonCode |         0 |
 
   @TS_queue_14
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Implementation using array page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -122,13 +122,13 @@ Feature: User to sign in the dsalgo application and test Queue page
     Then The user should be redirected to Queue Operations page
 
   @TS_queue_16
-  Scenario: The user should be directed to editor page with run button to test python code
+  Scenario: The user should be directed to editor page with run button to test python code from Queue Operations page
     Given The user in Queue Operations page
     When The user clicks on Tryhere link
     Then The user navigates to Editor page with Run button
 
   @TS_queue_17
-  Scenario Outline: The user is able to run code in Editor
+  Scenario Outline: The user is able to run code in Editor for Queue Operations page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters valid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
@@ -139,7 +139,7 @@ Feature: User to sign in the dsalgo application and test Queue page
       | pythonCode |         0 |
 
   @TS_queue_18
-  Scenario Outline: The user is presented with error message for invalid code in Editor
+  Scenario Outline: The user is presented with error message for invalid code in Editor for Queue Operations page
     Given The user is in a page having an Editor with a Run button to test
     When The user enters invalid python code in Editor from sheet "<Sheetname>" and <RowNumber>
     And clicks run button
