@@ -82,7 +82,7 @@ Report will be generated tо directory: target/dsAlgoReport.html
 
 ### Develop automation scripts using BDD approach - Cucumber-Java :
 
-Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/reference 
+Tests are written in the Cucumber framework using the Gherkin Syntax. More about Gherkin & Cucumber can be found at https://cucumber.io/docs/cucumber/ 
 
 ### The Page Object Design Pattern (Selenium PageFactory) :
 
