@@ -60,7 +60,7 @@ Running with tags
 ```
 $ cd <Project Directory>
 
-$ mvn test -Dcucumber.filter.tags="@tree"
+$ mvn test -Dcucumber.filter.tags='@tree'
 ```
 ## Reporting
 
